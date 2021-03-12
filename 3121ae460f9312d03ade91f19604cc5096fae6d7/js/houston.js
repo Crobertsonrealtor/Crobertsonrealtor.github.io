@@ -180,7 +180,7 @@ map.on("load", function() {
 
 // When a click event occurs on a feature in the places layer, open a popup at the
 // location of the feature, with description HTML from its properties.
-map.on('click', 'baseCamp', function (e) {
+map.on('mouseenter', 'baseCamp', function (e) {
   var coordinates = e.features[0].geometry.coordinates.slice();
   var description = e.features[0].properties.description;
    
@@ -221,7 +221,7 @@ map.on('click', 'baseCamp', function (e) {
   
   var div6 = document.getElementById('Location');
   div6.innerHTML = '';
-  div6.innerHTML = 'Base Camp';
+  div6.innerHTML = 'Trails of Bunker Hill';
 
   // create DOM element for the marker
   var el = document.createElement('div');
@@ -294,7 +294,7 @@ map.on('click', 'khumbuIcefall', function (e) {
 
 // When a click event occurs on a feature in the places layer, open a popup at the
 // location of the feature, with description HTML from its properties.
-map.on('click', 'camp1', function (e) {
+map.on('mouseenter', 'camp1', function (e) {
   var coordinates = e.features[0].geometry.coordinates.slice();
   var description = e.features[0].properties.description;
    
@@ -335,7 +335,7 @@ map.on('click', 'camp1', function (e) {
 
   var div6 = document.getElementById('Location');
   div6.innerHTML = '';
-  div6.innerHTML = 'Camp 1';
+  div6.innerHTML = 'Trails of Bunker Hill';
 
   // create DOM element for the marker
   var el = document.createElement('div');
@@ -351,7 +351,7 @@ map.on('click', 'camp1', function (e) {
 
 // When a click event occurs on a feature in the places layer, open a popup at the
 // location of the feature, with description HTML from its properties.
-map.on('click', 'camp2', function (e) {
+map.on('mouseenter', 'camp2', function (e) {
   var coordinates = e.features[0].geometry.coordinates.slice();
   var description = e.features[0].properties.description;
    
@@ -392,7 +392,7 @@ map.on('click', 'camp2', function (e) {
 
   var div6 = document.getElementById('Location');
   div6.innerHTML = '';
-  div6.innerHTML = 'Camp 2';
+  div6.innerHTML = 'Trails of Bunker Hill';
 
   // create DOM element for the marker
   var el = document.createElement('div');
@@ -408,7 +408,7 @@ map.on('click', 'camp2', function (e) {
 
 // When a click event occurs on a feature in the places layer, open a popup at the
 // location of the feature, with description HTML from its properties.
-map.on('click', 'camp3', function (e) {
+map.on('mouseenter', 'camp3', function (e) {
   var coordinates = e.features[0].geometry.coordinates.slice();
   var description = e.features[0].properties.description;
    
@@ -449,7 +449,7 @@ map.on('click', 'camp3', function (e) {
 
   var div6 = document.getElementById('Location');
   div6.innerHTML = '';
-  div6.innerHTML = 'Camp 3';
+  div6.innerHTML = 'Trails of Bunker Hill';
 
   // create DOM element for the marker
   var el = document.createElement('div');
@@ -465,7 +465,7 @@ map.on('click', 'camp3', function (e) {
 
 // When a click event occurs on a feature in the places layer, open a popup at the
 // location of the feature, with description HTML from its properties.
-map.on('click', 'camp4', function (e) {
+map.on('mouseenter', 'camp4', function (e) {
   var coordinates = e.features[0].geometry.coordinates.slice();
   var description = e.features[0].properties.description;
    
@@ -506,7 +506,7 @@ map.on('click', 'camp4', function (e) {
 
   var div6 = document.getElementById('Location');
   div6.innerHTML = '';
-  div6.innerHTML = 'Camp 4';
+  div6.innerHTML = 'Trails of Bunker Hill';
 
   // create DOM element for the marker
   var el = document.createElement('div');
@@ -522,7 +522,7 @@ map.on('click', 'camp4', function (e) {
 
 // When a click event occurs on a feature in the places layer, open a popup at the
 // location of the feature, with description HTML from its properties.
-map.on('click', 'camp5', function (e) {
+map.on('mouseenter', 'camp5', function (e) {
   var coordinates = e.features[0].geometry.coordinates.slice();
   var description = e.features[0].properties.description;
    
@@ -563,7 +563,7 @@ map.on('click', 'camp5', function (e) {
 
   var div6 = document.getElementById('Location');
   div6.innerHTML = '';
-  div6.innerHTML = 'South Summit';
+  div6.innerHTML = 'Trails of Bunker Hill';
 
   // create DOM element for the marker
   var el = document.createElement('div');
