@@ -3,6 +3,12 @@ html, body, #container {
     overflow: hidden;
     width: 100%;
   }
+
+  h1 {
+    float: right;
+    margin-right: 5px;
+    margin-top: 1px;
+  }
  
   .navbar {
     min-height: 50px;
