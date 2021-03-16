@@ -228,11 +228,18 @@ map.on("load", function() {
   });
 });
 
+var popup = new mapboxgl.Popup({
+  offset: 5,
+  closeOnClick: false
+});
+
 // When a click event occurs on a feature in the places layer, open a popup at the
 // location of the feature, with description HTML from its properties.
 map.on('mouseenter', 'baseCamp', function (e) {
   var coordinates = e.features[0].geometry.coordinates.slice();
   var description = e.features[0].properties.description;
+  //var detailsHtmlLines = [];
+  //var coordinates = e.features[0].geometry.coordinates.slice();
    
   // Ensure that if the map is zoomed out such that multiple
   // copies of the feature are visible, the popup appears
@@ -241,49 +248,62 @@ map.on('mouseenter', 'baseCamp', function (e) {
     coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
   }
   
-  var popup = new mapboxgl.Popup({ offset: 0 })
-  .setText("Base Camp");
+  //var popup = new mapboxgl.Popup({ offset: 0 })
+  //.setText("Base Camp");
+  //detailsHtmlLines.push("<img src=\"images/trail1_1.png\" width=\"200px\" height=\"150px\">");
 
-  //Add things to the side panel
-  var div = document.getElementById('locImg');
-  div.innerHTML = '';
-  div.innerHTML = "<img src=\"images/trail1_1.png\" width=\"200px\" height=\"150px\">";
+  popup
+    .setLngLat(coordinates)
+    .setHTML("<img src=\"images/logo.jpg\" width=\"100px\" height=\"100px\">" + "Bunker Hill Village" + "<br>" 
+    + "<img src=\"images/trail1_1.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Bunker Hill" 
+    + "<br>" + "<img src=\"images/trail.png\">" + "Trail Location" + "<br>" 
+    + "Connects Taylorcrest Rd to Taylorcrest Ct")
+    .addTo(map);
 
-  var div = document.getElementById('elevation');
-  div.innerHTML = '';
-  div.innerHTML = div.innerHTML = '<span style="color:#1499ff">17,600 ft (5,380 m)</span>';
+  // //Add things to the side panel
+  // var div = document.getElementById('locImg');
+  // div.innerHTML = '';
+  // div.innerHTML = "<img src=\"images/trail1_1.png\" width=\"200px\" height=\"150px\">";
 
-  var div2 = document.getElementById('oxygen');
-  div2.innerHTML = '';
-  div2.innerHTML = '11% (21% at Sea Level)';
+  // var div = document.getElementById('elevation');
+  // div.innerHTML = '';
+  // div.innerHTML = div.innerHTML = '<span style="color:#1499ff">17,600 ft (5,380 m)</span>';
+
+  // var div2 = document.getElementById('oxygen');
+  // div2.innerHTML = '';
+  // div2.innerHTML = '11% (21% at Sea Level)';
   
-  var div3 = document.getElementById('distToSummit');
-  div3.innerHTML = '';
-  div3.innerHTML = '11,435 ft (3,485 m)';
+  // var div3 = document.getElementById('distToSummit');
+  // div3.innerHTML = '';
+  // div3.innerHTML = '11,435 ft (3,485 m)';
 
-  var div4 = document.getElementById('distToBaseCamp');
-  div4.innerHTML = '';
-  div4.innerHTML = 'You are here!';
+  // var div4 = document.getElementById('distToBaseCamp');
+  // div4.innerHTML = '';
+  // div4.innerHTML = 'You are here!';
 
-  var div5 = document.getElementById('info');
-  div5.innerHTML = '';
-  div5.innerHTML = 'Located near Bunker Hill Elementary School; connects Taylorcrest Rd to Taylorcrest Ct';
+  // var div5 = document.getElementById('info');
+  // div5.innerHTML = '';
+  // div5.innerHTML = 'Located near Bunker Hill Elementary School; connects Taylorcrest Rd to Taylorcrest Ct';
   
-  var div6 = document.getElementById('Location');
-  div6.innerHTML = '';
-  div6.innerHTML = 'Trails of Bunker Hill';
+  // var div6 = document.getElementById('Location');
+  // div6.innerHTML = '';
+  // div6.innerHTML = 'Trails of Bunker Hill';
 
-  // create DOM element for the marker
-  var el = document.createElement('div');
-  el.id = 'marker';
-  //console.log(route.features[0].geometry.coordinates[counter]);
-  // create the marker
-  new mapboxgl.Marker(el)
-    .setLngLat([86.85719586641274, 28.00647209182954])
-    //.setPopup(popup) // sets a popup on this marker
-    .addTo(map)
-    //.togglePopup();
+  // // create DOM element for the marker
+  // var el = document.createElement('div');
+  // el.id = 'marker';
+  // //console.log(route.features[0].geometry.coordinates[counter]);
+  // // create the marker
+  // new mapboxgl.Marker(el)
+  //   .setLngLat([86.85719586641274, 28.00647209182954])
+  //   //.setPopup(popup) // sets a popup on this marker
+  //   .addTo(map)
+  //   //.togglePopup();
 });
+
+// map.on('mouseout', 'baseCamp', function (e) {
+//   popup.remove();
+// });
 
   // When a click event occurs on a feature in the places layer, open a popup at the
 // location of the feature, with description HTML from its properties.
@@ -354,48 +374,56 @@ map.on('mouseenter', 'camp1', function (e) {
   while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
     coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
   }
+
+  popup
+  .setLngLat(coordinates)
+  .setHTML("<img src=\"images/logo.jpg\" width=\"100px\" height=\"100px\">" + "Bunker Hill Village" + "<br>" 
+  + "<img src=\"images/trail1_2.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Bunker Hill" 
+  + "<br>" + "<img src=\"images/trail.png\">" + "Trail Location" + "<br>" 
+  + "Connects Taylorcrest Ct to Taylorcrest Rd")
+  .addTo(map);
    
-  var popup = new mapboxgl.Popup({ offset: 0 })
-  .setText("Camp 1");
+  //var popup = new mapboxgl.Popup({ offset: 0 })
+  //.setText("Camp 1");
 
   //Add things to the side panel
-  var div = document.getElementById('locImg');
-  div.innerHTML = '';
-  div.innerHTML = "<img src=\"images/trail1_2.png\" width=\"200px\" height=\"150px\">";
+  // var div = document.getElementById('locImg');
+  // div.innerHTML = '';
+  // div.innerHTML = "<img src=\"images/trail1_2.png\" width=\"200px\" height=\"150px\">";
 
-  var div = document.getElementById('elevation');
-  div.innerHTML = '';
-  div.innerHTML = div.innerHTML = '<span style="color: cyan">19,900 ft (6,065 m)</span>';
+  // var div = document.getElementById('elevation');
+  // div.innerHTML = '';
+  // div.innerHTML = div.innerHTML = '<span style="color: cyan">19,900 ft (6,065 m)</span>';
 
-  var div2 = document.getElementById('oxygen');
-  div2.innerHTML = '';
-  div2.innerHTML = '9.7%';
+  // var div2 = document.getElementById('oxygen');
+  // div2.innerHTML = '';
+  // div2.innerHTML = '9.7%';
   
-  var div3 = document.getElementById('distToSummit');
-  div3.innerHTML = '';
-  div3.innerHTML = '9,135 ft (2,785 m)';
+  // var div3 = document.getElementById('distToSummit');
+  // div3.innerHTML = '';
+  // div3.innerHTML = '9,135 ft (2,785 m)';
 
-  var div4 = document.getElementById('distToBaseCamp');
-  div4.innerHTML = '';
-  div4.innerHTML = '2,300 ft (685 m)';
+  // var div4 = document.getElementById('distToBaseCamp');
+  // div4.innerHTML = '';
+  // div4.innerHTML = '2,300 ft (685 m)';
 
-  var div5 = document.getElementById('info');
-  div5.innerHTML = '';
-  div5.innerHTML = 'Located near Bunker Hill Elementary School; connects Taylorcrest Ct and Taylorcrest Rd';
+  // var div5 = document.getElementById('info');
+  // div5.innerHTML = '';
+  // div5.innerHTML = 'Located near Bunker Hill Elementary School; connects Taylorcrest Ct and Taylorcrest Rd';
 
-  var div6 = document.getElementById('Location');
-  div6.innerHTML = '';
-  div6.innerHTML = 'Trails of Bunker Hill';
+  // var div6 = document.getElementById('Location');
+  // div6.innerHTML = '';
+  // div6.innerHTML = 'Trails of Bunker Hill';
 
-  // create DOM element for the marker
-  var el = document.createElement('div');
-  el.id = 'marker';
-  //console.log(route.features[0].geometry.coordinates[counter]);
-  // create the marker
-  new mapboxgl.Marker(el)
-    .setLngLat([86.87624051444797, 27.98704598816326])
-    //.setPopup(popup) // sets a popup on this marker
-    .addTo(map)
+  // // create DOM element for the marker
+  // var el = document.createElement('div');
+  // el.id = 'marker';
+  // //console.log(route.features[0].geometry.coordinates[counter]);
+  // // create the marker
+  // new mapboxgl.Marker(el)
+  //   .setLngLat([86.87624051444797, 27.98704598816326])
+  //   //.setPopup(popup) // sets a popup on this marker
+  //   .addTo(map)
     //.togglePopup();
   });
 
@@ -411,48 +439,56 @@ map.on('mouseenter', 'camp2', function (e) {
   while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
     coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
   }
+
+  popup
+  .setLngLat(coordinates)
+  .setHTML("<img src=\"images/logo.jpg\" width=\"100px\" height=\"100px\">" + "Bunker Hill Village" + "<br>" 
+  + "<img src=\"images/trail2_1.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Bunker Hill" 
+  + "<br>" + "<img src=\"images/trail.png\">" + "Trail Location" + "<br>" 
+  + "Connects two ends of Greenbay Dr")
+  .addTo(map);
    
-  var popup = new mapboxgl.Popup({ offset: 0 })
-  .setText("Camp 2");
+  //var popup = new mapboxgl.Popup({ offset: 0 })
+  //.setText("Camp 2");
 
   //Add things to the side panel
-  var div = document.getElementById('locImg');
-  div.innerHTML = '';
-  div.innerHTML = "<img src=\"images/trail2_1.png\" width=\"200px\" height=\"150px\">";
+  // var div = document.getElementById('locImg');
+  // div.innerHTML = '';
+  // div.innerHTML = "<img src=\"images/trail2_1.png\" width=\"200px\" height=\"150px\">";
 
-  var div = document.getElementById('elevation');
-  div.innerHTML = '';
-  div.innerHTML = div.innerHTML = '<span style="color: #7fc97f">21,300 ft (6,500 m)</span>';
+  // var div = document.getElementById('elevation');
+  // div.innerHTML = '';
+  // div.innerHTML = div.innerHTML = '<span style="color: #7fc97f">21,300 ft (6,500 m)</span>';
 
-  var div2 = document.getElementById('oxygen');
-  div2.innerHTML = '';
-  div2.innerHTML = '9.4%';
+  // var div2 = document.getElementById('oxygen');
+  // div2.innerHTML = '';
+  // div2.innerHTML = '9.4%';
   
-  var div3 = document.getElementById('distToSummit');
-  div3.innerHTML = '';
-  div3.innerHTML = '7,735 ft (2,350 m)';
+  // var div3 = document.getElementById('distToSummit');
+  // div3.innerHTML = '';
+  // div3.innerHTML = '7,735 ft (2,350 m)';
 
-  var div4 = document.getElementById('distToBaseCamp');
-  div4.innerHTML = '';
-  div4.innerHTML = '3,700 ft (1,120 m)';
+  // var div4 = document.getElementById('distToBaseCamp');
+  // div4.innerHTML = '';
+  // div4.innerHTML = '3,700 ft (1,120 m)';
 
-  var div5 = document.getElementById('info');
-  div5.innerHTML = '';
-  div5.innerHTML = 'Located at the intersection of Greenbay Dr and Coachman St; trail connects two ends of Greenbay Dr';
+  // var div5 = document.getElementById('info');
+  // div5.innerHTML = '';
+  // div5.innerHTML = 'Located at the intersection of Greenbay Dr and Coachman St; trail connects two ends of Greenbay Dr';
 
-  var div6 = document.getElementById('Location');
-  div6.innerHTML = '';
-  div6.innerHTML = 'Trails of Bunker Hill';
+  // var div6 = document.getElementById('Location');
+  // div6.innerHTML = '';
+  // div6.innerHTML = 'Trails of Bunker Hill';
 
-  // create DOM element for the marker
-  var el = document.createElement('div');
-  el.id = 'marker';
+  // // create DOM element for the marker
+  // var el = document.createElement('div');
+  // el.id = 'marker';
 
-  // create the marker
-  new mapboxgl.Marker(el)
-    .setLngLat([86.90335492493271, 27.980322036569067])
-    //.setPopup(popup) // sets a popup on this marker
-    .addTo(map)
+  // // create the marker
+  // new mapboxgl.Marker(el)
+  //   .setLngLat([86.90335492493271, 27.980322036569067])
+  //   //.setPopup(popup) // sets a popup on this marker
+  //   .addTo(map)
     //.togglePopup();
 });
 
@@ -468,48 +504,56 @@ map.on('mouseenter', 'camp3', function (e) {
   while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
     coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
   }
+
+  popup
+  .setLngLat(coordinates)
+  .setHTML("<img src=\"images/logo.jpg\" width=\"100px\" height=\"100px\">" + "Bunker Hill Village" + "<br>" 
+  + "<img src=\"images/trail2_2.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Bunker Hill" 
+  + "<br>" + "<img src=\"images/trail.png\">" + "Trail Location" + "<br>" 
+  + "Connects two ends of Greenbay Dr")
+  .addTo(map);
    
-  var popup = new mapboxgl.Popup({ offset: 0 })
-  .setText("Camp 3");
+  //var popup = new mapboxgl.Popup({ offset: 0 })
+  //.setText("Camp 3");
 
   //Add things to the side panel
-  var div = document.getElementById('locImg');
-  div.innerHTML = '';
-  div.innerHTML = "<img src=\"images/trail2_2.png\" width=\"200px\" height=\"150px\">";
+  // var div = document.getElementById('locImg');
+  // div.innerHTML = '';
+  // div.innerHTML = "<img src=\"images/trail2_2.png\" width=\"200px\" height=\"150px\">";
 
-  var div = document.getElementById('elevation');
-  div.innerHTML = '';
-  div.innerHTML = div.innerHTML = '<span style="color: #fd8d3c">24,500 ft (7,470 m)</span>';
+  // var div = document.getElementById('elevation');
+  // div.innerHTML = '';
+  // div.innerHTML = div.innerHTML = '<span style="color: #fd8d3c">24,500 ft (7,470 m)</span>';
 
-  var div2 = document.getElementById('oxygen');
-  div2.innerHTML = '';
-  div2.innerHTML = '8.7%';
+  // var div2 = document.getElementById('oxygen');
+  // div2.innerHTML = '';
+  // div2.innerHTML = '8.7%';
   
-  var div3 = document.getElementById('distToSummit');
-  div3.innerHTML = '';
-  div3.innerHTML = '4,535 ft (1,380 m)';
+  // var div3 = document.getElementById('distToSummit');
+  // div3.innerHTML = '';
+  // div3.innerHTML = '4,535 ft (1,380 m)';
 
-  var div4 = document.getElementById('distToBaseCamp');
-  div4.innerHTML = '';
-  div4.innerHTML = '6,900 ft (2,090 m)';
+  // var div4 = document.getElementById('distToBaseCamp');
+  // div4.innerHTML = '';
+  // div4.innerHTML = '6,900 ft (2,090 m)';
 
-  var div5 = document.getElementById('info');
-  div5.innerHTML = '';
-  div5.innerHTML = 'Located near Greenbay Dr and Coachman St; trail connects two ends of Greenbay Dr';
+  // var div5 = document.getElementById('info');
+  // div5.innerHTML = '';
+  // div5.innerHTML = 'Located near Greenbay Dr and Coachman St; trail connects two ends of Greenbay Dr';
 
-  var div6 = document.getElementById('Location');
-  div6.innerHTML = '';
-  div6.innerHTML = 'Trails of Bunker Hill';
+  // var div6 = document.getElementById('Location');
+  // div6.innerHTML = '';
+  // div6.innerHTML = 'Trails of Bunker Hill';
 
-  // create DOM element for the marker
-  var el = document.createElement('div');
-  el.id = 'marker';
+  // // create DOM element for the marker
+  // var el = document.createElement('div');
+  // el.id = 'marker';
 
-  // create the marker
-  new mapboxgl.Marker(el)
-    .setLngLat([86.92478118334084, 27.967650460942664])
-    //.setPopup(popup) // sets a popup on this marker
-    .addTo(map)
+  // // create the marker
+  // new mapboxgl.Marker(el)
+  //   .setLngLat([86.92478118334084, 27.967650460942664])
+  //   //.setPopup(popup) // sets a popup on this marker
+  //   .addTo(map)
     //.togglePopup();
 });
 
@@ -525,48 +569,56 @@ map.on('mouseenter', 'camp4', function (e) {
   while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
     coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
   }
+
+  popup
+  .setLngLat(coordinates)
+  .setHTML("<img src=\"images/logo.jpg\" width=\"100px\" height=\"100px\">" + "Bunker Hill Village" + "<br>" 
+  + "<img src=\"images/trail3_1.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Bunker Hill" 
+  + "<br>" + "<img src=\"images/trail.png\">" + "Trail Location" + "<br>" 
+  + "Connects Greenbay Dr to Quail Hollow Ln")
+  .addTo(map);
    
-  var popup = new mapboxgl.Popup({ offset: 0 })
-  .setText("Camp 4");
+  //var popup = new mapboxgl.Popup({ offset: 0 })
+  //.setText("Camp 4");
 
   //Add things to the side panel
-  var div = document.getElementById('locImg');
-  div.innerHTML = '';
-  div.innerHTML = "<img src=\"images/trail3_1.png\" width=\"200px\" height=\"150px\">";
+  // var div = document.getElementById('locImg');
+  // div.innerHTML = '';
+  // div.innerHTML = "<img src=\"images/trail3_1.png\" width=\"200px\" height=\"150px\">";
 
-  var div = document.getElementById('elevation');
-  div.innerHTML = '';
-  div.innerHTML = '<span style="color: #f16913">26,000 ft (7,925 m)</span>';
+  // var div = document.getElementById('elevation');
+  // div.innerHTML = '';
+  // div.innerHTML = '<span style="color: #f16913">26,000 ft (7,925 m)</span>';
 
-  var div2 = document.getElementById('oxygen');
-  div2.innerHTML = '';
-  div2.innerHTML = div2.innerHTML = '<span style="color: rgb(201, 34, 34)">7.8%</span>';
+  // var div2 = document.getElementById('oxygen');
+  // div2.innerHTML = '';
+  // div2.innerHTML = div2.innerHTML = '<span style="color: rgb(201, 34, 34)">7.8%</span>';
   
-  var div3 = document.getElementById('distToSummit');
-  div3.innerHTML = '';
-  div3.innerHTML = '3,035 ft (925 m)';
+  // var div3 = document.getElementById('distToSummit');
+  // div3.innerHTML = '';
+  // div3.innerHTML = '3,035 ft (925 m)';
 
-  var div4 = document.getElementById('distToBaseCamp');
-  div4.innerHTML = '';
-  div4.innerHTML = '8,400 ft (2,545 m)';
+  // var div4 = document.getElementById('distToBaseCamp');
+  // div4.innerHTML = '';
+  // div4.innerHTML = '8,400 ft (2,545 m)';
 
-  var div5 = document.getElementById('info');
-  div5.innerHTML = '';
-  div5.innerHTML = 'Connects Greenbay Dr to Quail Hollow Ln';
+  // var div5 = document.getElementById('info');
+  // div5.innerHTML = '';
+  // div5.innerHTML = 'Connects Greenbay Dr to Quail Hollow Ln';
 
-  var div6 = document.getElementById('Location');
-  div6.innerHTML = '';
-  div6.innerHTML = 'Trails of Bunker Hill';
+  // var div6 = document.getElementById('Location');
+  // div6.innerHTML = '';
+  // div6.innerHTML = 'Trails of Bunker Hill';
 
-  // create DOM element for the marker
-  var el = document.createElement('div');
-  el.id = 'marker';
+  // // create DOM element for the marker
+  // var el = document.createElement('div');
+  // el.id = 'marker';
 
-  // create the marker
-  new mapboxgl.Marker(el)
-    .setLngLat([86.93082159811098, 27.973526561469413])
-    //.setPopup(popup) // sets a popup on this marker
-    .addTo(map)
+  // // create the marker
+  // new mapboxgl.Marker(el)
+  //   .setLngLat([86.93082159811098, 27.973526561469413])
+  //   //.setPopup(popup) // sets a popup on this marker
+  //   .addTo(map)
     //.togglePopup();
   });
 
@@ -582,48 +634,56 @@ map.on('mouseenter', 'camp5', function (e) {
   while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
     coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
   }
+
+  popup
+  .setLngLat(coordinates)
+  .setHTML("<img src=\"images/logo.jpg\" width=\"100px\" height=\"100px\">" + "Bunker Hill Village" + "<br>" 
+  + "<img src=\"images/trail3_2.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Bunker Hill" 
+  + "<br>" + "<img src=\"images/trail.png\">" + "Trail Location" + "<br>" 
+  + "Connects Quail Hollow Ln to Greenbay Dr")
+  .addTo(map);
    
-  var popup = new mapboxgl.Popup({ offset: 0 })
-  .setText("South Summit");
+  //var popup = new mapboxgl.Popup({ offset: 0 })
+  //.setText("South Summit");
 
   //Add things to the side panel
-  var div = document.getElementById('locImg');
-  div.innerHTML = '';
-  div.innerHTML = "<img src=\"images/trail3_2.png\" width=\"200px\" height=\"150px\">";
+  // var div = document.getElementById('locImg');
+  // div.innerHTML = '';
+  // div.innerHTML = "<img src=\"images/trail3_2.png\" width=\"200px\" height=\"150px\">";
 
-  var div = document.getElementById('elevation');
-  div.innerHTML = '';
-  div.innerHTML = div.innerHTML = '<span style="color: rgb(201, 34, 34)">28,700 ft (8,748 m)</span>';
+  // var div = document.getElementById('elevation');
+  // div.innerHTML = '';
+  // div.innerHTML = div.innerHTML = '<span style="color: rgb(201, 34, 34)">28,700 ft (8,748 m)</span>';
 
-  var div2 = document.getElementById('oxygen');
-  div2.innerHTML = '';
-  div2.innerHTML = div2.innerHTML = '<span style="color: rgb(201, 34, 34)">7%</span>';
+  // var div2 = document.getElementById('oxygen');
+  // div2.innerHTML = '';
+  // div2.innerHTML = div2.innerHTML = '<span style="color: rgb(201, 34, 34)">7%</span>';
   
-  var div3 = document.getElementById('distToSummit');
-  div3.innerHTML = '';
-  div3.innerHTML = '335 ft (102 m)';
+  // var div3 = document.getElementById('distToSummit');
+  // div3.innerHTML = '';
+  // div3.innerHTML = '335 ft (102 m)';
 
-  var div4 = document.getElementById('distToBaseCamp');
-  div4.innerHTML = '';
-  div4.innerHTML = '11,100 ft (3,368 m)';
+  // var div4 = document.getElementById('distToBaseCamp');
+  // div4.innerHTML = '';
+  // div4.innerHTML = '11,100 ft (3,368 m)';
 
-  var div5 = document.getElementById('info');
-  div5.innerHTML = '';
-  div5.innerHTML = 'Connects Quail Hollow Ln to Greenbay Dr';
+  // var div5 = document.getElementById('info');
+  // div5.innerHTML = '';
+  // div5.innerHTML = 'Connects Quail Hollow Ln to Greenbay Dr';
 
-  var div6 = document.getElementById('Location');
-  div6.innerHTML = '';
-  div6.innerHTML = 'Trails of Bunker Hill';
+  // var div6 = document.getElementById('Location');
+  // div6.innerHTML = '';
+  // div6.innerHTML = 'Trails of Bunker Hill';
 
-  // create DOM element for the marker
-  var el = document.createElement('div');
-  el.id = 'marker';
+  // // create DOM element for the marker
+  // var el = document.createElement('div');
+  // el.id = 'marker';
 
-  // create the marker
-  new mapboxgl.Marker(el)
-    .setLngLat([86.92582516958662, 27.985105632009432])
-    //.setPopup(popup) // sets a popup on this marker
-    .addTo(map)
+  // // create the marker
+  // new mapboxgl.Marker(el)
+  //   .setLngLat([86.92582516958662, 27.985105632009432])
+  //   //.setPopup(popup) // sets a popup on this marker
+  //   .addTo(map)
     //.togglePopup();
 });
 
@@ -639,48 +699,56 @@ map.on('mouseenter', 'camp6', function (e) {
   while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
     coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
   }
+
+  popup
+  .setLngLat(coordinates)
+  .setHTML("<img src=\"images/logo.jpg\" width=\"100px\" height=\"100px\">" + "Bunker Hill Village" + "<br>" 
+  + "<img src=\"images/trail4_1.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Bunker Hill" 
+  + "<br>" + "<img src=\"images/trail.png\">" + "Trail Location" + "<br>" 
+  + "Connects Blalock Rd to Dunsinane St")
+  .addTo(map);
    
-  var popup = new mapboxgl.Popup({ offset: 0 })
-  .setText("South Summit");
+  //var popup = new mapboxgl.Popup({ offset: 0 })
+  //.setText("South Summit");
 
   //Add things to the side panel
-  var div = document.getElementById('locImg');
-  div.innerHTML = '';
-  div.innerHTML = "<img src=\"images/trail4_1.png\" width=\"200px\" height=\"150px\">";
+  // var div = document.getElementById('locImg');
+  // div.innerHTML = '';
+  // div.innerHTML = "<img src=\"images/trail4_1.png\" width=\"200px\" height=\"150px\">";
 
-  var div = document.getElementById('elevation');
-  div.innerHTML = '';
-  div.innerHTML = div.innerHTML = '<span style="color: rgb(201, 34, 34)">28,700 ft (8,748 m)</span>';
+  // var div = document.getElementById('elevation');
+  // div.innerHTML = '';
+  // div.innerHTML = div.innerHTML = '<span style="color: rgb(201, 34, 34)">28,700 ft (8,748 m)</span>';
 
-  var div2 = document.getElementById('oxygen');
-  div2.innerHTML = '';
-  div2.innerHTML = div2.innerHTML = '<span style="color: rgb(201, 34, 34)">7%</span>';
+  // var div2 = document.getElementById('oxygen');
+  // div2.innerHTML = '';
+  // div2.innerHTML = div2.innerHTML = '<span style="color: rgb(201, 34, 34)">7%</span>';
   
-  var div3 = document.getElementById('distToSummit');
-  div3.innerHTML = '';
-  div3.innerHTML = '335 ft (102 m)';
+  // var div3 = document.getElementById('distToSummit');
+  // div3.innerHTML = '';
+  // div3.innerHTML = '335 ft (102 m)';
 
-  var div4 = document.getElementById('distToBaseCamp');
-  div4.innerHTML = '';
-  div4.innerHTML = '11,100 ft (3,368 m)';
+  // var div4 = document.getElementById('distToBaseCamp');
+  // div4.innerHTML = '';
+  // div4.innerHTML = '11,100 ft (3,368 m)';
 
-  var div5 = document.getElementById('info');
-  div5.innerHTML = '';
-  div5.innerHTML = 'Connects Blalock Rd to Dunsinane St';
+  // var div5 = document.getElementById('info');
+  // div5.innerHTML = '';
+  // div5.innerHTML = 'Connects Blalock Rd to Dunsinane St';
 
-  var div6 = document.getElementById('Location');
-  div6.innerHTML = '';
-  div6.innerHTML = 'Trails of Bunker Hill';
+  // var div6 = document.getElementById('Location');
+  // div6.innerHTML = '';
+  // div6.innerHTML = 'Trails of Bunker Hill';
 
-  // create DOM element for the marker
-  var el = document.createElement('div');
-  el.id = 'marker';
+  // // create DOM element for the marker
+  // var el = document.createElement('div');
+  // el.id = 'marker';
 
-  // create the marker
-  new mapboxgl.Marker(el)
-    .setLngLat([86.92582516958662, 27.985105632009432])
-    //.setPopup(popup) // sets a popup on this marker
-    .addTo(map)
+  // // create the marker
+  // new mapboxgl.Marker(el)
+  //   .setLngLat([86.92582516958662, 27.985105632009432])
+  //   //.setPopup(popup) // sets a popup on this marker
+  //   .addTo(map)
     //.togglePopup();
 });
 
@@ -696,48 +764,56 @@ map.on('mouseenter', 'camp7', function (e) {
   while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
     coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
   }
+
+  popup
+  .setLngLat(coordinates)
+  .setHTML("<img src=\"images/logo.jpg\" width=\"100px\" height=\"100px\">" + "Bunker Hill Village" + "<br>" 
+  + "<img src=\"images/trail4_2.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Bunker Hill" 
+  + "<br>" + "<img src=\"images/trail.png\">" + "Trail Location" + "<br>" 
+  + "Connects Dunsinane St to Blalock Rd")
+  .addTo(map);
    
-  var popup = new mapboxgl.Popup({ offset: 0 })
-  .setText("South Summit");
+  //var popup = new mapboxgl.Popup({ offset: 0 })
+  //.setText("South Summit");
 
   //Add things to the side panel
-  var div = document.getElementById('locImg');
-  div.innerHTML = '';
-  div.innerHTML = "<img src=\"images/trail4_2.png\" width=\"200px\" height=\"150px\">";
+  // var div = document.getElementById('locImg');
+  // div.innerHTML = '';
+  // div.innerHTML = "<img src=\"images/trail4_2.png\" width=\"200px\" height=\"150px\">";
 
-  var div = document.getElementById('elevation');
-  div.innerHTML = '';
-  div.innerHTML = div.innerHTML = '<span style="color: rgb(201, 34, 34)">28,700 ft (8,748 m)</span>';
+  // var div = document.getElementById('elevation');
+  // div.innerHTML = '';
+  // div.innerHTML = div.innerHTML = '<span style="color: rgb(201, 34, 34)">28,700 ft (8,748 m)</span>';
 
-  var div2 = document.getElementById('oxygen');
-  div2.innerHTML = '';
-  div2.innerHTML = div2.innerHTML = '<span style="color: rgb(201, 34, 34)">7%</span>';
+  // var div2 = document.getElementById('oxygen');
+  // div2.innerHTML = '';
+  // div2.innerHTML = div2.innerHTML = '<span style="color: rgb(201, 34, 34)">7%</span>';
   
-  var div3 = document.getElementById('distToSummit');
-  div3.innerHTML = '';
-  div3.innerHTML = '335 ft (102 m)';
+  // var div3 = document.getElementById('distToSummit');
+  // div3.innerHTML = '';
+  // div3.innerHTML = '335 ft (102 m)';
 
-  var div4 = document.getElementById('distToBaseCamp');
-  div4.innerHTML = '';
-  div4.innerHTML = '11,100 ft (3,368 m)';
+  // var div4 = document.getElementById('distToBaseCamp');
+  // div4.innerHTML = '';
+  // div4.innerHTML = '11,100 ft (3,368 m)';
 
-  var div5 = document.getElementById('info');
-  div5.innerHTML = '';
-  div5.innerHTML = 'Connects Dunsinane St to Blalock Rd';
+  // var div5 = document.getElementById('info');
+  // div5.innerHTML = '';
+  // div5.innerHTML = 'Connects Dunsinane St to Blalock Rd';
 
-  var div6 = document.getElementById('Location');
-  div6.innerHTML = '';
-  div6.innerHTML = 'Trails of Bunker Hill';
+  // var div6 = document.getElementById('Location');
+  // div6.innerHTML = '';
+  // div6.innerHTML = 'Trails of Bunker Hill';
 
-  // create DOM element for the marker
-  var el = document.createElement('div');
-  el.id = 'marker';
+  // // create DOM element for the marker
+  // var el = document.createElement('div');
+  // el.id = 'marker';
 
-  // create the marker
-  new mapboxgl.Marker(el)
-    .setLngLat([86.92582516958662, 27.985105632009432])
-    //.setPopup(popup) // sets a popup on this marker
-    .addTo(map)
+  // // create the marker
+  // new mapboxgl.Marker(el)
+  //   .setLngLat([86.92582516958662, 27.985105632009432])
+  //   //.setPopup(popup) // sets a popup on this marker
+  //   .addTo(map)
     //.togglePopup();
 });
 
@@ -876,11 +952,17 @@ map.on('click', 'summit', function (e) {
   //Change the cursor back to the default and un-highlight the marker when the user mouses out.
   //window.setTimeout(function() {deSelect()}, 1);
   //function deSelect() {
-  map.on('mouseleave', 'baseCamp', function () {
-    map.getCanvas().style.cursor = '';
-    map.removeLayer("baseCamp100");
-    map.removeImage("custom-marker100");
-  });
+    map.on('mouseout', 'baseCamp', function () {
+      map.getCanvas().style.cursor = '';
+      map.removeImage("custom-marker100");
+      map.removeLayer("baseCamp100");
+    });
+
+  // map.on('mouseout', 'baseCamp100', function () {
+  //   map.getCanvas().style.cursor = '';
+  //   map.removeLayer("baseCamp100");
+  //   map.removeImage("custom-marker100");
+  // });
   //}
 
   //Change the cursor to a pointer and highlight the marker when the user mouses over it.
@@ -902,7 +984,7 @@ map.on('click', 'summit', function (e) {
       });
   });
   //Change the cursor back to the default and un-highlight the marker when the user mouses out.
-  map.on('mouseleave', 'camp1', function () {
+  map.on('mouseout', 'camp1', function () {
     map.getCanvas().style.cursor = '';
     map.removeLayer("baseCamp101");
     map.removeImage("custom-marker101");
@@ -927,7 +1009,7 @@ map.on('click', 'summit', function (e) {
       });
   }); 
   //Change the cursor back to the default and un-highlight the marker when the user mouses out.
-  map.on('mouseleave', 'camp2', function () {
+  map.on('mouseout', 'camp2', function () {
     map.getCanvas().style.cursor = '';
     map.removeLayer("baseCamp102");
     map.removeImage("custom-marker102");
@@ -952,7 +1034,7 @@ map.on('click', 'summit', function (e) {
       });
   });
   //Change the cursor back to the default and un-highlight the marker when the user mouses out.
-  map.on('mouseleave', 'camp3', function () {
+  map.on('mouseout', 'camp3', function () {
     map.getCanvas().style.cursor = '';
     map.removeLayer("baseCamp103");
     map.removeImage("custom-marker103");
@@ -977,7 +1059,7 @@ map.on('click', 'summit', function (e) {
       });
   });
   //Change the cursor back to the default and un-highlight the marker when the user mouses out.
-  map.on('mouseleave', 'camp4', function () {
+  map.on('mouseout', 'camp4', function () {
     map.getCanvas().style.cursor = '';
     map.removeLayer("baseCamp104");
     map.removeImage("custom-marker104");
@@ -1002,7 +1084,7 @@ map.on('click', 'summit', function (e) {
         });
     });
     //Change the cursor back to the default and un-highlight the marker when the user mouses out.
-    map.on('mouseleave', 'camp5', function () {
+    map.on('mouseout', 'camp5', function () {
       map.getCanvas().style.cursor = '';
       map.removeLayer("baseCamp105");
       map.removeImage("custom-marker105");
@@ -1027,7 +1109,7 @@ map.on('click', 'summit', function (e) {
         });
     });
     //Change the cursor back to the default and un-highlight the marker when the user mouses out.
-    map.on('mouseleave', 'camp6', function () {
+    map.on('mouseout', 'camp6', function () {
       map.getCanvas().style.cursor = '';
       map.removeLayer("baseCamp106");
       map.removeImage("custom-marker106");
@@ -1052,7 +1134,7 @@ map.on('click', 'summit', function (e) {
           });
       });
       //Change the cursor back to the default and un-highlight the marker when the user mouses out.
-      map.on('mouseleave', 'camp7', function () {
+      map.on('mouseout', 'camp7', function () {
         map.getCanvas().style.cursor = '';
         map.removeLayer("baseCamp107");
         map.removeImage("custom-marker107");
