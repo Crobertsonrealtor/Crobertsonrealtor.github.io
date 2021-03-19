@@ -4,14 +4,14 @@ function createMap(){
   mapboxgl.accessToken = 'pk.eyJ1IjoibmlzaGlkaWxpcHNvbnRha2tlIiwiYSI6ImNqY3FucHJ4azAzNXgzM3MwbGRvM3M2YWsifQ.Mwh9X4xZhkSBBCTfBlZHEQ';
   
   //SW coordinate, NE coordinate boundaries
-  var bounds = [[-95.517425, 29.761337], [-95.486035, 29.786516]];
+  var bounds = [[-95.5315723, 29.7732116], [-95.5018849, 29.7839497]];
 
   //var bounds = [[-95.540083, 29.773145], [-95.538056, 29.773164]];
 
   var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/nishidilipsontakke/cjuhnd62s559x1fqmt6kccmfe',
-    center: [-95.506125, 29.772166],
+    center: [-95.5212726, 29.7812737],
     zoom: 1,
     maxBounds: bounds
 });
