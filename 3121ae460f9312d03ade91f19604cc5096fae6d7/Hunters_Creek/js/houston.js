@@ -4,7 +4,7 @@ function createMap(){
   mapboxgl.accessToken = 'pk.eyJ1IjoibmlzaGlkaWxpcHNvbnRha2tlIiwiYSI6ImNqY3FucHJ4azAzNXgzM3MwbGRvM3M2YWsifQ.Mwh9X4xZhkSBBCTfBlZHEQ';
   
   //SW coordinate, NE coordinate boundaries
-  var bounds = [[-95.517425, 29.761337], [-95.486035, 29.786516]];
+  var bounds = [[-95.509075, 29.751662], [-95.486035, 29.786516]];
 
   //var bounds = [[-95.540083, 29.773145], [-95.538056, 29.773164]];
 
@@ -1185,6 +1185,23 @@ var route4 = {
   }]
 };
 
+var route5 = {
+  "type": "FeatureCollection",
+  "features": [{
+  "type": "Feature",
+  "geometry": {
+  "type": "LineString",
+  "coordinates": [[-95.504647, 29.752640], [-95.504523, 29.754017], [-95.506681, 29.754930], [-95.506473, 29.762599], [-95.508791, 29.762584],
+[-95.508909, 29.777590], [-95.505800, 29.777636], [-95.505858, 29.781528], [-95.506176, 29.782088], [-95.501881, 29.783131],
+[-95.501848, 29.784202], [-95.488262, 29.783940], [-95.488176, 29.777152], [-95.487122, 29.777419], [-95.487102, 29.769663],
+[-95.488271, 29.769453], [-95.487256, 29.768254], [-95.488008, 29.767064], [-95.492197, 29.765449], [-95.490754, 29.763888],
+[-95.492345, 29.763244], [-95.492393, 29.764359], [-95.494850, 29.764892], [-95.496016, 29.762361], [-95.497240, 29.761567],
+[-95.498458, 29.762064], [-95.499202, 29.760525], [-95.499686, 29.760219], [-95.500847, 29.760376], [-95.501132, 29.752857],
+[-95.504647, 29.752640]]
+  }
+  }]
+};
+
 
 var origin=[86.85719586641274, 28.00647209182954];
 
@@ -1271,6 +1288,12 @@ map.on('load', function () {
       lineMetrics: true,
       "data": route4
     });
+
+    map.addSource('route5', {
+      "type": "geojson",
+      lineMetrics: true,
+      "data": route5
+    });
     
     map.addSource('point', {
       "type": "geojson",
@@ -1326,6 +1349,20 @@ map.on('load', function () {
       "paint": {
       "line-width": 3,
       "line-color": "black"
+      },
+      layout: {
+      'line-cap': 'round',
+      'line-join': 'round'
+      }
+    });
+
+    map.addLayer({
+      "id": "route5",
+      "source": "route5",
+      "type": "line",
+      "paint": {
+      "line-width": 0.5,
+      "line-color": "red"
       },
       layout: {
       'line-cap': 'round',
