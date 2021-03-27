@@ -4,7 +4,7 @@ function createMap(){
   mapboxgl.accessToken = 'pk.eyJ1IjoibmlzaGlkaWxpcHNvbnRha2tlIiwiYSI6ImNqY3FucHJ4azAzNXgzM3MwbGRvM3M2YWsifQ.Mwh9X4xZhkSBBCTfBlZHEQ';
   
   //SW coordinate, NE coordinate boundaries
-  var bounds = [[-95.5278604, 29.7417834], [-95.5087693, 29.7776336]];
+  var bounds = [[-95.529912, 29.739853], [-95.502130, 29.782742]];
 
   //var bounds = [[-95.540083, 29.773145], [-95.538056, 29.773164]];
 
@@ -1185,6 +1185,23 @@ var route4 = {
   }]
 };
 
+var route5 = {
+  "type": "FeatureCollection",
+  "features": [{
+  "type": "Feature",
+  "geometry": {
+  "type": "LineString",
+  "coordinates": [[-95.523044, 29.742163], [-95.523151, 29.743306], [-95.526661, 29.743190], [-95.528424, 29.744830], [-95.528615, 29.745159],
+[-95.528624, 29.745939], [-95.525884, 29.747205], [-95.525717, 29.748179], [-95.525914, 29.751116], [-95.522762, 29.751088],
+[-95.522486, 29.773316], [-95.517672, 29.773350], [-95.517559, 29.777544], [-95.508906, 29.777591], [-95.508790, 29.762583],
+[-95.506478, 29.762597], [-95.506563, 29.756343], [-95.506822, 29.755419], [-95.504596, 29.754131], [-95.505272, 29.750210],
+[-95.506714, 29.748309], [-95.508401, 29.748261], [-95.506769, 29.747313], [-95.507842, 29.746095], [-95.512028, 29.745588],
+[-95.512005, 29.744117], [-95.512800, 29.743756], [-95.513940, 29.744890], [-95.516345, 29.743383], [-95.517410, 29.743908],
+[-95.518244, 29.742646], [-95.519020, 29.743258], [-95.520391, 29.742131], [-95.523044, 29.742163]]
+  }
+  }]
+};
+
 
 var origin=[86.85719586641274, 28.00647209182954];
 
@@ -1271,6 +1288,12 @@ map.on('load', function () {
       lineMetrics: true,
       "data": route4
     });
+
+    map.addSource('route5', {
+      "type": "geojson",
+      lineMetrics: true,
+      "data": route5
+    });
     
     map.addSource('point', {
       "type": "geojson",
@@ -1326,6 +1349,20 @@ map.on('load', function () {
       "paint": {
       "line-width": 3,
       "line-color": "black"
+      },
+      layout: {
+      'line-cap': 'round',
+      'line-join': 'round'
+      }
+    });
+
+    map.addLayer({
+      "id": "route5",
+      "source": "route5",
+      "type": "line",
+      "paint": {
+      "line-width": 0.5,
+      "line-color": "red"
       },
       layout: {
       'line-cap': 'round',
