@@ -4,7 +4,7 @@ function createMap(){
   mapboxgl.accessToken = 'pk.eyJ1IjoibmlzaGlkaWxpcHNvbnRha2tlIiwiYSI6ImNqY3FucHJ4azAzNXgzM3MwbGRvM3M2YWsifQ.Mwh9X4xZhkSBBCTfBlZHEQ';
   
   //SW coordinate, NE coordinate boundaries
-  var bounds = [[-95.5315723, 29.7732116], [-95.5018849, 29.7839497]];
+  var bounds = [[-95.532077, 29.772570], [-95.501250, 29.784383]];
 
   //var bounds = [[-95.540083, 29.773145], [-95.538056, 29.773164]];
 
@@ -1185,6 +1185,19 @@ var route4 = {
   }]
 };
 
+var route5 = {
+  "type": "FeatureCollection",
+  "features": [{
+  "type": "Feature",
+  "geometry": {
+  "type": "LineString",
+  "coordinates": [[-95.531574, 29.773221], [-95.531792, 29.783838], [-95.501871, 29.783950], [-95.501880, 29.783079], [-95.506179, 29.782092],
+[-95.505855, 29.781541], [-95.505796, 29.777638], [-95.517560, 29.777543], [-95.517669, 29.773355], [-95.523383, 29.773310],
+[-95.523390, 29.773893], [-95.524451, 29.773847], [-95.524472, 29.776902], [-95.526703, 29.776883], [-95.526631, 29.773267],
+[-95.531574, 29.773221]]
+  }
+  }]
+};
 
 var origin=[86.85719586641274, 28.00647209182954];
 
@@ -1271,6 +1284,12 @@ map.on('load', function () {
       lineMetrics: true,
       "data": route4
     });
+
+    map.addSource('route5', {
+      "type": "geojson",
+      lineMetrics: true,
+      "data": route5
+    });
     
     map.addSource('point', {
       "type": "geojson",
@@ -1326,6 +1345,20 @@ map.on('load', function () {
       "paint": {
       "line-width": 3,
       "line-color": "black"
+      },
+      layout: {
+      'line-cap': 'round',
+      'line-join': 'round'
+      }
+    });
+
+    map.addLayer({
+      "id": "route5",
+      "source": "route5",
+      "type": "line",
+      "paint": {
+      "line-width": 0.5,
+      "line-color": "red"
       },
       layout: {
       'line-cap': 'round',
