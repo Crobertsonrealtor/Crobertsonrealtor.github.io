@@ -140,7 +140,7 @@ map.on("load", function() {
       properties: {},
       geometry: {
       type: "Point",
-      coordinates: [-95.502336, 29.767110]
+      coordinates: [-95.522857, 29.762576]
       }
       }
       ]
@@ -165,7 +165,7 @@ map.on("load", function() {
       properties: {},
       geometry: {
       type: "Point",
-      coordinates: [-95.503040, 29.766614]
+      coordinates: [-95.521332, 29.762543]
       }
       }
       ]
@@ -544,53 +544,11 @@ map.on('mouseenter', 'camp4', function (e) {
   popup
     .setLngLat(coordinates)
     .setHTML("<img src=\"images/logo.jpg\" width=\"100px\" height=\"100px\">" + "Piney Point Village" + "<br>" 
-    + "<img src=\"images/trail3.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Piney Point Village" 
+    + "<img src=\"images/trail7_1.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Piney Point Village" 
     + "<br>" + "<img src=\"images/trail.png\">" + "Trail Location" + "<br>" 
-    + "Connects Timberglen Dr to Caruthers Ln")
+    + "Connects Greenbay Dr to Blalock Rd " + "<br>" + "to Quail Hollow Ln")
     .addTo(map);
    
-  //var popup = new mapboxgl.Popup({ offset: 0 })
-  //.setText("Camp 4");
-
-  //Add things to the side panel
-  // var div = document.getElementById('locImg');
-  // div.innerHTML = '';
-  // div.innerHTML = "<img src=\"images/trail3_1.png\" width=\"200px\" height=\"150px\">";
-
-  // var div = document.getElementById('elevation');
-  // div.innerHTML = '';
-  // div.innerHTML = '<span style="color: #f16913">26,000 ft (7,925 m)</span>';
-
-  // var div2 = document.getElementById('oxygen');
-  // div2.innerHTML = '';
-  // div2.innerHTML = div2.innerHTML = '<span style="color: rgb(201, 34, 34)">7.8%</span>';
-  
-  // var div3 = document.getElementById('distToSummit');
-  // div3.innerHTML = '';
-  // div3.innerHTML = '3,035 ft (925 m)';
-
-  // var div4 = document.getElementById('distToBaseCamp');
-  // div4.innerHTML = '';
-  // div4.innerHTML = '8,400 ft (2,545 m)';
-
-  // var div5 = document.getElementById('info');
-  // div5.innerHTML = '';
-  // div5.innerHTML = 'Connects Greenbay Dr to Quail Hollow Ln';
-
-  // var div6 = document.getElementById('Location');
-  // div6.innerHTML = '';
-  // div6.innerHTML = 'Trails of Bunker Hill';
-
-  // // create DOM element for the marker
-  // var el = document.createElement('div');
-  // el.id = 'marker';
-
-  // // create the marker
-  // new mapboxgl.Marker(el)
-  //   .setLngLat([86.93082159811098, 27.973526561469413])
-  //   //.setPopup(popup) // sets a popup on this marker
-  //   .addTo(map)
-    //.togglePopup();
   });
 
 // When a click event occurs on a feature in the places layer, open a popup at the
@@ -609,53 +567,11 @@ map.on('mouseenter', 'camp5', function (e) {
   popup
     .setLngLat(coordinates)
     .setHTML("<img src=\"images/logo.jpg\" width=\"100px\" height=\"100px\">" + "Piney Point Village" + "<br>" 
-    + "<img src=\"images/trail3.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Piney Point Village" 
+    + "<img src=\"images/trail7_2.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Piney Point Village" 
     + "<br>" + "<img src=\"images/trail.png\">" + "Trail Location" + "<br>" 
-    + "Connects Caruthers Ln to Timberglen Dr")
+    + "Connects Quail Hollow Ln to Blalock Rd " + "<br>" + "to Greenbay Dr")
     .addTo(map);
    
-  //var popup = new mapboxgl.Popup({ offset: 0 })
-  //.setText("South Summit");
-
-  //Add things to the side panel
-  // var div = document.getElementById('locImg');
-  // div.innerHTML = '';
-  // div.innerHTML = "<img src=\"images/trail3_2.png\" width=\"200px\" height=\"150px\">";
-
-  // var div = document.getElementById('elevation');
-  // div.innerHTML = '';
-  // div.innerHTML = div.innerHTML = '<span style="color: rgb(201, 34, 34)">28,700 ft (8,748 m)</span>';
-
-  // var div2 = document.getElementById('oxygen');
-  // div2.innerHTML = '';
-  // div2.innerHTML = div2.innerHTML = '<span style="color: rgb(201, 34, 34)">7%</span>';
-  
-  // var div3 = document.getElementById('distToSummit');
-  // div3.innerHTML = '';
-  // div3.innerHTML = '335 ft (102 m)';
-
-  // var div4 = document.getElementById('distToBaseCamp');
-  // div4.innerHTML = '';
-  // div4.innerHTML = '11,100 ft (3,368 m)';
-
-  // var div5 = document.getElementById('info');
-  // div5.innerHTML = '';
-  // div5.innerHTML = 'Connects Quail Hollow Ln to Greenbay Dr';
-
-  // var div6 = document.getElementById('Location');
-  // div6.innerHTML = '';
-  // div6.innerHTML = 'Trails of Bunker Hill';
-
-  // // create DOM element for the marker
-  // var el = document.createElement('div');
-  // el.id = 'marker';
-
-  // // create the marker
-  // new mapboxgl.Marker(el)
-  //   .setLngLat([86.92582516958662, 27.985105632009432])
-  //   //.setPopup(popup) // sets a popup on this marker
-  //   .addTo(map)
-    //.togglePopup();
 });
 
 // When a click event occurs on a feature in the places layer, open a popup at the
@@ -1191,7 +1107,7 @@ var route3 = {
   "type": "Feature",
   "geometry": {
   "type": "LineString",
-  "coordinates": [[-95.502336, 29.767110], [-95.503040, 29.766614]]
+  "coordinates": [[-95.522857, 29.762576], [-95.521332, 29.762543]]
   }
   }]
 };
