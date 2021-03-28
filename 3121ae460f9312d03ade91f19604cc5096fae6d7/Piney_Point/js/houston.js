@@ -225,12 +225,107 @@ map.on("load", function() {
       "icon-image": "custom-marker",
       }
     });
+
+    map.addLayer({
+      id: "camp8",
+      type: "symbol",
+      /* Source: A data source specifies the geographic coordinate where the image marker gets placed. */
+      source: {
+      type: "geojson",
+      data: {
+      type: 'FeatureCollection',
+      features: [
+      {
+      type: 'Feature',
+      properties: {},
+      geometry: {
+      type: "Point",
+      coordinates: [-95.522282, 29.766789]
+      }
+      }
+      ]
+      }
+      },
+      layout: {
+      "icon-image": "custom-marker",
+      }
+    });
+
+    map.addLayer({
+      id: "camp9",
+      type: "symbol",
+      /* Source: A data source specifies the geographic coordinate where the image marker gets placed. */
+      source: {
+      type: "geojson",
+      data: {
+      type: 'FeatureCollection',
+      features: [
+      {
+      type: 'Feature',
+      properties: {},
+      geometry: {
+      type: "Point",
+      coordinates: [-95.521706, 29.766789]
+      }
+      }
+      ]
+      }
+      },
+      layout: {
+      "icon-image": "custom-marker",
+      }
+    });
   });
 });
 
 var popup = new mapboxgl.Popup({
   offset: 5,
   closeOnClick: false
+});
+
+// When a click event occurs on a feature in the places layer, open a popup at the
+// location of the feature, with description HTML from its properties.
+map.on('mouseenter', 'camp8', function (e) {
+  var coordinates = e.features[0].geometry.coordinates.slice();
+  var description = e.features[0].properties.description;
+   
+  // Ensure that if the map is zoomed out such that multiple
+  // copies of the feature are visible, the popup appears
+  // over the copy being pointed to.
+  while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+    coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+  }
+
+  popup
+  .setLngLat(coordinates)
+  .setHTML("<img src=\"images/logo.jpg\" width=\"100px\" height=\"100px\">" + "Bunker Hill Village" + "<br>" 
+  + "<img src=\"images/trail4_1.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Bunker Hill" 
+  + "<br>" + "<img src=\"images/trail.png\">" + "Trail Location" + "<br>" 
+  + "Connects Blalock Rd to Dunsinane St")
+  .addTo(map);
+  
+});
+
+// When a click event occurs on a feature in the places layer, open a popup at the
+// location of the feature, with description HTML from its properties.
+map.on('mouseenter', 'camp9', function (e) {
+  var coordinates = e.features[0].geometry.coordinates.slice();
+  var description = e.features[0].properties.description;
+   
+  // Ensure that if the map is zoomed out such that multiple
+  // copies of the feature are visible, the popup appears
+  // over the copy being pointed to.
+  while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+    coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+  }
+
+  popup
+  .setLngLat(coordinates)
+  .setHTML("<img src=\"images/logo.jpg\" width=\"100px\" height=\"100px\">" + "Bunker Hill Village" + "<br>" 
+  + "<img src=\"images/trail4_2.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Bunker Hill" 
+  + "<br>" + "<img src=\"images/trail.png\">" + "Trail Location" + "<br>" 
+  + "Connects Dunsinane St to Blalock Rd")
+  .addTo(map);
 });
 
 // When a click event occurs on a feature in the places layer, open a popup at the
@@ -1140,6 +1235,57 @@ map.on('click', 'summit', function (e) {
         map.removeImage("custom-marker107");
       });
 
+            //Change the cursor to a pointer and highlight the marker when the user mouses over it.
+            map.on('mouseenter', 'camp8', function () {
+              map.getCanvas().style.cursor = 'pointer';
+              map.loadImage("images/trail_selected.png", function(error, image) {
+                  map.addImage("custom-marker108", image);
+                  map.addLayer({
+                  "id": "baseCamp108",
+                  "source": "camp8",
+                  "type": "symbol",
+                  "layout": {
+                  "icon-image": "custom-marker108",
+                  "icon-rotate": ["get", "bearing"],
+                  "icon-allow-overlap": true,
+                  "icon-ignore-placement": true
+                  }
+                  });
+                });
+            });
+            //Change the cursor back to the default and un-highlight the marker when the user mouses out.
+            map.on('mouseout', 'camp8', function () {
+              map.getCanvas().style.cursor = '';
+              map.removeLayer("baseCamp108");
+              map.removeImage("custom-marker108");
+            });
+
+
+            //Change the cursor to a pointer and highlight the marker when the user mouses over it.
+            map.on('mouseenter', 'camp9', function () {
+              map.getCanvas().style.cursor = 'pointer';
+              map.loadImage("images/trail_selected.png", function(error, image) {
+                  map.addImage("custom-marker109", image);
+                  map.addLayer({
+                  "id": "baseCamp109",
+                  "source": "camp9",
+                  "type": "symbol",
+                  "layout": {
+                  "icon-image": "custom-marker109",
+                  "icon-rotate": ["get", "bearing"],
+                  "icon-allow-overlap": true,
+                  "icon-ignore-placement": true
+                  }
+                  });
+                });
+            });
+            //Change the cursor back to the default and un-highlight the marker when the user mouses out.
+            map.on('mouseout', 'camp9', function () {
+              map.getCanvas().style.cursor = '';
+              map.removeLayer("baseCamp109");
+              map.removeImage("custom-marker109");
+            });
+
 // A simple line from origin to destination.
 var route = {
   "type": "FeatureCollection",
@@ -1198,6 +1344,17 @@ var route5 = {
 [-95.506714, 29.748309], [-95.508401, 29.748261], [-95.506769, 29.747313], [-95.507842, 29.746095], [-95.512028, 29.745588],
 [-95.512005, 29.744117], [-95.512800, 29.743756], [-95.513940, 29.744890], [-95.516345, 29.743383], [-95.517410, 29.743908],
 [-95.518244, 29.742646], [-95.519020, 29.743258], [-95.520391, 29.742131], [-95.523044, 29.742163]]
+  }
+  }]
+};
+
+var route6 = {
+  "type": "FeatureCollection",
+  "features": [{
+  "type": "Feature",
+  "geometry": {
+  "type": "LineString",
+  "coordinates": [[-95.522282, 29.766789], [-95.521706, 29.766789]]
   }
   }]
 };
@@ -1294,6 +1451,12 @@ map.on('load', function () {
       lineMetrics: true,
       "data": route5
     });
+
+    map.addSource('route6', {
+      "type": "geojson",
+      lineMetrics: true,
+      "data": route6
+    });
     
     map.addSource('point', {
       "type": "geojson",
@@ -1363,6 +1526,20 @@ map.on('load', function () {
       "paint": {
       "line-width": 0.5,
       "line-color": "red"
+      },
+      layout: {
+      'line-cap': 'round',
+      'line-join': 'round'
+      }
+    });
+
+    map.addLayer({
+      "id": "route6",
+      "source": "route6",
+      "type": "line",
+      "paint": {
+      "line-width": 3,
+      "line-color": "black"
       },
       layout: {
       'line-cap': 'round',
