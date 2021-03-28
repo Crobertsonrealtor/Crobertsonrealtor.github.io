@@ -90,7 +90,7 @@ map.on("load", function() {
       properties: {},
       geometry: {
       type: "Point",
-      coordinates: [-95.505773, 29.768197]
+      coordinates: [-95.520094, 29.756933]
       }
       }
       ]
@@ -115,7 +115,7 @@ map.on("load", function() {
       properties: {},
       geometry: {
       type: "Point",
-      coordinates: [-95.505835, 29.767540]
+      coordinates: [-95.518980, 29.757599]
       }
       }
       ]
@@ -498,9 +498,9 @@ map.on('mouseenter', 'camp2', function (e) {
   popup
     .setLngLat(coordinates)
     .setHTML("<img src=\"images/logo.jpg\" width=\"100px\" height=\"100px\">" + "Piney Point Village" + "<br>" 
-    + "<img src=\"images/trail2_1.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Piney Point Village" 
+    + "<img src=\"images/trail6.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Piney Point Village" 
     + "<br>" + "<img src=\"images/trail.png\">" + "Trail Location" + "<br>" 
-    + "Connects Trail End St to Timberglen Dr")
+    + "Connects Blalock to Green Oaks Dr " + "<br>" + "to St. Francis Episcopal School")
     .addTo(map);
 
 });
@@ -521,9 +521,9 @@ map.on('mouseenter', 'camp3', function (e) {
   popup
     .setLngLat(coordinates)
     .setHTML("<img src=\"images/logo.jpg\" width=\"100px\" height=\"100px\">" + "Piney Point Village" + "<br>" 
-    + "<img src=\"images/trail2_2.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Piney Point Village" 
+    + "<img src=\"images/trail6.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Piney Point Village" 
     + "<br>" + "<img src=\"images/trail.png\">" + "Trail Location" + "<br>" 
-    + "Connects Timberglen Dr to Trail End St")
+    + "Connects Blalock to Green Oaks Dr " + "<br>" + "to St. Francis Episcopal School")
     .addTo(map);
    
 });
@@ -1180,7 +1180,7 @@ var route2 = {
   "type": "Feature",
   "geometry": {
   "type": "LineString",
-  "coordinates": [[-95.505773, 29.768197], [-95.505835, 29.767540]]
+  "coordinates": [[-95.520094, 29.756933], [-95.518980, 29.757599]]
   }
   }]
 };
