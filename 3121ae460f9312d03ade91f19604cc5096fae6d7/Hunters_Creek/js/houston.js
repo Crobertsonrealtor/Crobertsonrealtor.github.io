@@ -575,7 +575,7 @@ map.on('mouseenter', 'camp4', function (e) {
     .setHTML("<img src=\"images/logo.jpg\" width=\"100px\" height=\"100px\">" + "Hunters Creek Village" + "<br>" 
     + "<img src=\"images/trail3.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Hunters Creek Village" 
     + "<br>" + "<img src=\"images/trail.png\">" + "Trail Location" + "<br>" 
-    + "PRIVATE PROPERTY: Connects Timberglen Dr to Caruthers Ln")
+    + "PRIVATE PROPERTY:" + "<br>" + "Connects Timberglen Dr to Caruthers Ln")
     .addTo(map);
    
   //var popup = new mapboxgl.Popup({ offset: 0 })
@@ -640,7 +640,7 @@ map.on('mouseenter', 'camp5', function (e) {
     .setHTML("<img src=\"images/logo.jpg\" width=\"100px\" height=\"100px\">" + "Hunters Creek Village" + "<br>" 
     + "<img src=\"images/trail3.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Hunters Creek Village" 
     + "<br>" + "<img src=\"images/trail.png\">" + "Trail Location" + "<br>" 
-    + "PRIVATE PROPERTY: Connects Caruthers Ln to Timberglen Dr")
+    + "PRIVATE PROPERTY:" + "<br>" + "Connects Caruthers Ln to Timberglen Dr")
     .addTo(map);
    
   //var popup = new mapboxgl.Popup({ offset: 0 })
