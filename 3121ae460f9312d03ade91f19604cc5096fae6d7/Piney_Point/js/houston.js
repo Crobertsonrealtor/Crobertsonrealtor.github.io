@@ -41,7 +41,7 @@ map.on("load", function() {
   properties: {},
   geometry: {
   type: "Point",
-  coordinates: [-95.506129, 29.772158]
+  coordinates: [-95.514596, 29.774726]
   }
   }
   ]
@@ -65,7 +65,7 @@ map.on("load", function() {
     properties: {},
     geometry: {
     type: "Point",
-    coordinates: [-95.506096, 29.771619]
+    coordinates: [-95.513893, 29.774731]
     }
     }
     ]
@@ -298,8 +298,8 @@ map.on('mouseenter', 'camp8', function (e) {
 
   popup
   .setLngLat(coordinates)
-  .setHTML("<img src=\"images/logo.jpg\" width=\"100px\" height=\"100px\">" + "Bunker Hill Village" + "<br>" 
-  + "<img src=\"images/trail4_1.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Bunker Hill" 
+  .setHTML("<img src=\"images/logo.jpg\" width=\"100px\" height=\"100px\">" + "Piney Point Village" + "<br>" 
+  + "<img src=\"images/trail4_1.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Piney Point" 
   + "<br>" + "<img src=\"images/trail.png\">" + "Trail Location" + "<br>" 
   + "Connects Blalock Rd to Dunsinane St")
   .addTo(map);
@@ -321,8 +321,8 @@ map.on('mouseenter', 'camp9', function (e) {
 
   popup
   .setLngLat(coordinates)
-  .setHTML("<img src=\"images/logo.jpg\" width=\"100px\" height=\"100px\">" + "Bunker Hill Village" + "<br>" 
-  + "<img src=\"images/trail4_2.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Bunker Hill" 
+  .setHTML("<img src=\"images/logo.jpg\" width=\"100px\" height=\"100px\">" + "Piney Point Village" + "<br>" 
+  + "<img src=\"images/trail4_2.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Piney Point" 
   + "<br>" + "<img src=\"images/trail.png\">" + "Trail Location" + "<br>" 
   + "Connects Dunsinane St to Blalock Rd")
   .addTo(map);
@@ -350,50 +350,10 @@ map.on('mouseenter', 'baseCamp', function (e) {
   popup
     .setLngLat(coordinates)
     .setHTML("<img src=\"images/logo.jpg\" width=\"100px\" height=\"100px\">" + "Piney Point Village" + "<br>" 
-    + "<img src=\"images/trail1.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Piney Point Village" 
+    + "<img src=\"images/trail5.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Piney Point Village" 
     + "<br>" + "<img src=\"images/trail.png\">" + "Trail Location" + "<br>" 
-    + "Connects Hunters Park Ln to Bridgewood St")
+    + "Connects Marchmont Dr to Wilding Ln")
     .addTo(map);
-
-  // //Add things to the side panel
-  // var div = document.getElementById('locImg');
-  // div.innerHTML = '';
-  // div.innerHTML = "<img src=\"images/trail1_1.png\" width=\"200px\" height=\"150px\">";
-
-  // var div = document.getElementById('elevation');
-  // div.innerHTML = '';
-  // div.innerHTML = div.innerHTML = '<span style="color:#1499ff">17,600 ft (5,380 m)</span>';
-
-  // var div2 = document.getElementById('oxygen');
-  // div2.innerHTML = '';
-  // div2.innerHTML = '11% (21% at Sea Level)';
-  
-  // var div3 = document.getElementById('distToSummit');
-  // div3.innerHTML = '';
-  // div3.innerHTML = '11,435 ft (3,485 m)';
-
-  // var div4 = document.getElementById('distToBaseCamp');
-  // div4.innerHTML = '';
-  // div4.innerHTML = 'You are here!';
-
-  // var div5 = document.getElementById('info');
-  // div5.innerHTML = '';
-  // div5.innerHTML = 'Located near Bunker Hill Elementary School; connects Taylorcrest Rd to Taylorcrest Ct';
-  
-  // var div6 = document.getElementById('Location');
-  // div6.innerHTML = '';
-  // div6.innerHTML = 'Trails of Bunker Hill';
-
-  // // create DOM element for the marker
-  // var el = document.createElement('div');
-  // el.id = 'marker';
-  // //console.log(route.features[0].geometry.coordinates[counter]);
-  // // create the marker
-  // new mapboxgl.Marker(el)
-  //   .setLngLat([86.85719586641274, 28.00647209182954])
-  //   //.setPopup(popup) // sets a popup on this marker
-  //   .addTo(map)
-  //   //.togglePopup();
 });
 
 // map.on('mouseout', 'baseCamp', function (e) {
@@ -473,9 +433,9 @@ map.on('mouseenter', 'camp1', function (e) {
   popup
     .setLngLat(coordinates)
     .setHTML("<img src=\"images/logo.jpg\" width=\"100px\" height=\"100px\">" + "Piney Point Village" + "<br>" 
-    + "<img src=\"images/trail1.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Piney Point Village" 
+    + "<img src=\"images/trail5.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Piney Point Village" 
     + "<br>" + "<img src=\"images/trail.png\">" + "Trail Location" + "<br>" 
-    + "Connects Bridgewood St to Hunters Park Ln")
+    + "Connects Wilding Ln to Marchmont Dr")
     .addTo(map);
    
   //var popup = new mapboxgl.Popup({ offset: 0 })
@@ -542,49 +502,7 @@ map.on('mouseenter', 'camp2', function (e) {
     + "<br>" + "<img src=\"images/trail.png\">" + "Trail Location" + "<br>" 
     + "Connects Trail End St to Timberglen Dr")
     .addTo(map);
-   
-  //var popup = new mapboxgl.Popup({ offset: 0 })
-  //.setText("Camp 2");
 
-  //Add things to the side panel
-  // var div = document.getElementById('locImg');
-  // div.innerHTML = '';
-  // div.innerHTML = "<img src=\"images/trail2_1.png\" width=\"200px\" height=\"150px\">";
-
-  // var div = document.getElementById('elevation');
-  // div.innerHTML = '';
-  // div.innerHTML = div.innerHTML = '<span style="color: #7fc97f">21,300 ft (6,500 m)</span>';
-
-  // var div2 = document.getElementById('oxygen');
-  // div2.innerHTML = '';
-  // div2.innerHTML = '9.4%';
-  
-  // var div3 = document.getElementById('distToSummit');
-  // div3.innerHTML = '';
-  // div3.innerHTML = '7,735 ft (2,350 m)';
-
-  // var div4 = document.getElementById('distToBaseCamp');
-  // div4.innerHTML = '';
-  // div4.innerHTML = '3,700 ft (1,120 m)';
-
-  // var div5 = document.getElementById('info');
-  // div5.innerHTML = '';
-  // div5.innerHTML = 'Located at the intersection of Greenbay Dr and Coachman St; trail connects two ends of Greenbay Dr';
-
-  // var div6 = document.getElementById('Location');
-  // div6.innerHTML = '';
-  // div6.innerHTML = 'Trails of Bunker Hill';
-
-  // // create DOM element for the marker
-  // var el = document.createElement('div');
-  // el.id = 'marker';
-
-  // // create the marker
-  // new mapboxgl.Marker(el)
-  //   .setLngLat([86.90335492493271, 27.980322036569067])
-  //   //.setPopup(popup) // sets a popup on this marker
-  //   .addTo(map)
-    //.togglePopup();
 });
 
 // When a click event occurs on a feature in the places layer, open a popup at the
@@ -608,48 +526,6 @@ map.on('mouseenter', 'camp3', function (e) {
     + "Connects Timberglen Dr to Trail End St")
     .addTo(map);
    
-  //var popup = new mapboxgl.Popup({ offset: 0 })
-  //.setText("Camp 3");
-
-  //Add things to the side panel
-  // var div = document.getElementById('locImg');
-  // div.innerHTML = '';
-  // div.innerHTML = "<img src=\"images/trail2_2.png\" width=\"200px\" height=\"150px\">";
-
-  // var div = document.getElementById('elevation');
-  // div.innerHTML = '';
-  // div.innerHTML = div.innerHTML = '<span style="color: #fd8d3c">24,500 ft (7,470 m)</span>';
-
-  // var div2 = document.getElementById('oxygen');
-  // div2.innerHTML = '';
-  // div2.innerHTML = '8.7%';
-  
-  // var div3 = document.getElementById('distToSummit');
-  // div3.innerHTML = '';
-  // div3.innerHTML = '4,535 ft (1,380 m)';
-
-  // var div4 = document.getElementById('distToBaseCamp');
-  // div4.innerHTML = '';
-  // div4.innerHTML = '6,900 ft (2,090 m)';
-
-  // var div5 = document.getElementById('info');
-  // div5.innerHTML = '';
-  // div5.innerHTML = 'Located near Greenbay Dr and Coachman St; trail connects two ends of Greenbay Dr';
-
-  // var div6 = document.getElementById('Location');
-  // div6.innerHTML = '';
-  // div6.innerHTML = 'Trails of Bunker Hill';
-
-  // // create DOM element for the marker
-  // var el = document.createElement('div');
-  // el.id = 'marker';
-
-  // // create the marker
-  // new mapboxgl.Marker(el)
-  //   .setLngLat([86.92478118334084, 27.967650460942664])
-  //   //.setPopup(popup) // sets a popup on this marker
-  //   .addTo(map)
-    //.togglePopup();
 });
 
 // When a click event occurs on a feature in the places layer, open a popup at the
@@ -1293,7 +1169,7 @@ var route = {
   "type": "Feature",
   "geometry": {
   "type": "LineString",
-  "coordinates": [[-95.506129, 29.772158], [-95.506096, 29.771619]]
+  "coordinates": [[-95.514596, 29.774726], [-95.513893, 29.774731]]
   }
   }]
 };
