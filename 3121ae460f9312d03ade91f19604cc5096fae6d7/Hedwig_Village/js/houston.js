@@ -41,7 +41,7 @@ map.on("load", function() {
   properties: {},
   geometry: {
   type: "Point",
-  coordinates: [-95.506129, 29.772158]
+  coordinates: [-95.511911, 29.780465]
   }
   }
   ]
@@ -65,7 +65,7 @@ map.on("load", function() {
     properties: {},
     geometry: {
     type: "Point",
-    coordinates: [-95.506096, 29.771619]
+    coordinates: [-95.511852, 29.780826]
     }
     }
     ]
@@ -255,9 +255,9 @@ map.on('mouseenter', 'baseCamp', function (e) {
   popup
     .setLngLat(coordinates)
     .setHTML("<img src=\"images/logo.jpg\" width=\"100px\" height=\"100px\">" + "Hedwig Village" + "<br>" 
-    + "<img src=\"images/trail1.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Hedwig Village" 
+    + "<img src=\"images/trail5.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Hedwig Village" 
     + "<br>" + "<img src=\"images/trail.png\">" + "Trail Location" + "<br>" 
-    + "Connects Hunters Park Ln to Bridgewood St")
+    + "Connects Monte Cello St to Hedwig Park")
     .addTo(map);
 
   // //Add things to the side panel
@@ -378,9 +378,9 @@ map.on('mouseenter', 'camp1', function (e) {
   popup
     .setLngLat(coordinates)
     .setHTML("<img src=\"images/logo.jpg\" width=\"100px\" height=\"100px\">" + "Hedwig Village" + "<br>" 
-    + "<img src=\"images/trail1.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Hedwig Village" 
+    + "<img src=\"images/trail5.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Hedwig Village" 
     + "<br>" + "<img src=\"images/trail.png\">" + "Trail Location" + "<br>" 
-    + "Connects Bridgewood St to Hunters Park Ln")
+    + "Connects Hedwig Park to Monte Cello St")
     .addTo(map);
    
   //var popup = new mapboxgl.Popup({ offset: 0 })
@@ -1147,7 +1147,7 @@ var route = {
   "type": "Feature",
   "geometry": {
   "type": "LineString",
-  "coordinates": [[-95.506129, 29.772158], [-95.506096, 29.771619]]
+  "coordinates": [[-95.511911, 29.780465], [-95.511852, 29.780826]]
   }
   }]
 };
