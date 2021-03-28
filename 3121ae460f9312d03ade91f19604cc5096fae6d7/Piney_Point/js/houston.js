@@ -299,7 +299,7 @@ map.on('mouseenter', 'camp8', function (e) {
   popup
   .setLngLat(coordinates)
   .setHTML("<img src=\"images/logo.jpg\" width=\"100px\" height=\"100px\">" + "Piney Point Village" + "<br>" 
-  + "<img src=\"images/trail4_1.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Piney Point" 
+  + "<img src=\"images/trail4_1.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Piney Point Village" 
   + "<br>" + "<img src=\"images/trail.png\">" + "Trail Location" + "<br>" 
   + "Connects Blalock Rd to Dunsinane St")
   .addTo(map);
@@ -322,7 +322,7 @@ map.on('mouseenter', 'camp9', function (e) {
   popup
   .setLngLat(coordinates)
   .setHTML("<img src=\"images/logo.jpg\" width=\"100px\" height=\"100px\">" + "Piney Point Village" + "<br>" 
-  + "<img src=\"images/trail4_2.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Piney Point" 
+  + "<img src=\"images/trail4_2.png\" width=\"200px\" height=\"150px\">" + "<br>" + "Trails of Piney Point Village" 
   + "<br>" + "<img src=\"images/trail.png\">" + "Trail Location" + "<br>" 
   + "Connects Dunsinane St to Blalock Rd")
   .addTo(map);
