@@ -1316,7 +1316,7 @@ map.on('load', function () {
       "source": "route5",
       "type": "line",
       "paint": {
-      "line-width": 0.5,
+      "line-width": 1,
       "line-color": "red"
       },
       layout: {
