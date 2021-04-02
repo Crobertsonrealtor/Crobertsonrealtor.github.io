@@ -4,7 +4,7 @@ function createMap(){
   mapboxgl.accessToken = 'pk.eyJ1IjoibmlzaGlkaWxpcHNvbnRha2tlIiwiYSI6ImNqY3FucHJ4azAzNXgzM3MwbGRvM3M2YWsifQ.Mwh9X4xZhkSBBCTfBlZHEQ';
   
   //SW coordinate, NE coordinate boundaries
-  var bounds = [[-95.555427, 29.740771], [-95.502523, 29.796919]];
+  var bounds = [[-95.566015, 29.732919], [-95.502523, 29.796919]];
 
   //var bounds = [[-95.540083, 29.773145], [-95.538056, 29.773164]];
 
