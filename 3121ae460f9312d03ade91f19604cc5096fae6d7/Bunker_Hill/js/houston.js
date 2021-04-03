@@ -1220,7 +1220,7 @@ map.on('load', function () {
       "type": "line",
       "paint": {
       "line-width": 3,
-      "line-color": "black"
+      "line-color": "lightgreen"
       },
       layout: {
       'line-cap': 'round',
@@ -1234,7 +1234,7 @@ map.on('load', function () {
       "type": "line",
       "paint": {
       "line-width": 3,
-      "line-color": "black"
+      "line-color": "lightgreen"
       },
       layout: {
       'line-cap': 'round',
@@ -1248,7 +1248,7 @@ map.on('load', function () {
       "type": "line",
       "paint": {
       "line-width": 3,
-      "line-color": "black"
+      "line-color": "lightgreen"
       },
       layout: {
       'line-cap': 'round',
