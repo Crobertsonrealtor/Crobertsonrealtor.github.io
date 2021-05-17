@@ -5,9 +5,11 @@ html, body, #container {
   }
 
   h1 {
-    float: right;
-    margin-right: 5px;
-    margin-top: 1px;
+    margin: 0px;
+  }
+
+  h2 {
+    margin: 0px;
   }
  
   .navbar {
