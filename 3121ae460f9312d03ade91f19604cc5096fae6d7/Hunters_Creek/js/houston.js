@@ -79,30 +79,30 @@ function createMap() {
         },
       });
 
-      map.addLayer({
-        id: "camp2",
-        type: "symbol",
-        /* Source: A data source specifies the geographic coordinate where the image marker gets placed. */
-        source: {
-          type: "geojson",
-          data: {
-            type: "FeatureCollection",
-            features: [
-              {
-                type: "Feature",
-                properties: {},
-                geometry: {
-                  type: "Point",
-                  coordinates: [-95.505773, 29.768197],
-                },
-              },
-            ],
-          },
-        },
-        layout: {
-          "icon-image": "custom-marker",
-        },
-      });
+      // map.addLayer({
+      //   id: "camp2",
+      //   type: "symbol",
+      //   /* Source: A data source specifies the geographic coordinate where the image marker gets placed. */
+      //   source: {
+      //     type: "geojson",
+      //     data: {
+      //       type: "FeatureCollection",
+      //       features: [
+      //         {
+      //           type: "Feature",
+      //           properties: {},
+      //           geometry: {
+      //             type: "Point",
+      //             coordinates: [-95.505773, 29.768197],
+      //           },
+      //         },
+      //       ],
+      //     },
+      //   },
+      //   layout: {
+      //     "icon-image": "custom-marker",
+      //   },
+      // });
 
       map.addLayer({
         id: "camp3",
@@ -129,80 +129,80 @@ function createMap() {
         },
       });
 
-      map.addLayer({
-        id: "camp4",
-        type: "symbol",
-        /* Source: A data source specifies the geographic coordinate where the image marker gets placed. */
-        source: {
-          type: "geojson",
-          data: {
-            type: "FeatureCollection",
-            features: [
-              {
-                type: "Feature",
-                properties: {},
-                geometry: {
-                  type: "Point",
-                  coordinates: [-95.502336, 29.76711],
-                },
-              },
-            ],
-          },
-        },
-        layout: {
-          "icon-image": "custom-marker",
-        },
-      });
+      // map.addLayer({
+      //   id: "camp4",
+      //   type: "symbol",
+      //   /* Source: A data source specifies the geographic coordinate where the image marker gets placed. */
+      //   source: {
+      //     type: "geojson",
+      //     data: {
+      //       type: "FeatureCollection",
+      //       features: [
+      //         {
+      //           type: "Feature",
+      //           properties: {},
+      //           geometry: {
+      //             type: "Point",
+      //             coordinates: [-95.502336, 29.76711],
+      //           },
+      //         },
+      //       ],
+      //     },
+      //   },
+      //   layout: {
+      //     "icon-image": "custom-marker",
+      //   },
+      // });
 
-      map.addLayer({
-        id: "camp5",
-        type: "symbol",
-        /* Source: A data source specifies the geographic coordinate where the image marker gets placed. */
-        source: {
-          type: "geojson",
-          data: {
-            type: "FeatureCollection",
-            features: [
-              {
-                type: "Feature",
-                properties: {},
-                geometry: {
-                  type: "Point",
-                  coordinates: [-95.50304, 29.766614],
-                },
-              },
-            ],
-          },
-        },
-        layout: {
-          "icon-image": "custom-marker",
-        },
-      });
+      // map.addLayer({
+      //   id: "camp5",
+      //   type: "symbol",
+      //   /* Source: A data source specifies the geographic coordinate where the image marker gets placed. */
+      //   source: {
+      //     type: "geojson",
+      //     data: {
+      //       type: "FeatureCollection",
+      //       features: [
+      //         {
+      //           type: "Feature",
+      //           properties: {},
+      //           geometry: {
+      //             type: "Point",
+      //             coordinates: [-95.50304, 29.766614],
+      //           },
+      //         },
+      //       ],
+      //     },
+      //   },
+      //   layout: {
+      //     "icon-image": "custom-marker",
+      //   },
+      // });
 
-      map.addLayer({
-        id: "camp6",
-        type: "symbol",
-        /* Source: A data source specifies the geographic coordinate where the image marker gets placed. */
-        source: {
-          type: "geojson",
-          data: {
-            type: "FeatureCollection",
-            features: [
-              {
-                type: "Feature",
-                properties: {},
-                geometry: {
-                  type: "Point",
-                  coordinates: [-95.499569, 29.78106],
-                },
-              },
-            ],
-          },
-        },
-        layout: {
-          "icon-image": "custom-marker",
-        },
-      });
+      // map.addLayer({
+      //   id: "camp6",
+      //   type: "symbol",
+      //   /* Source: A data source specifies the geographic coordinate where the image marker gets placed. */
+      //   source: {
+      //     type: "geojson",
+      //     data: {
+      //       type: "FeatureCollection",
+      //       features: [
+      //         {
+      //           type: "Feature",
+      //           properties: {},
+      //           geometry: {
+      //             type: "Point",
+      //             coordinates: [-95.499569, 29.78106],
+      //           },
+      //         },
+      //       ],
+      //     },
+      //   },
+      //   layout: {
+      //     "icon-image": "custom-marker",
+      //   },
+      // });
 
       map.addLayer({
         id: "camp7",
@@ -452,77 +452,77 @@ function createMap() {
 
   // When a click event occurs on a feature in the places layer, open a popup at the
   // location of the feature, with description HTML from its properties.
-  map.on("mouseenter", "camp2", function (e) {
-    var coordinates = e.features[0].geometry.coordinates.slice();
-    var description = e.features[0].properties.description;
+  // map.on("mouseenter", "camp2", function (e) {
+  //   var coordinates = e.features[0].geometry.coordinates.slice();
+  //   var description = e.features[0].properties.description;
 
-    // Ensure that if the map is zoomed out such that multiple
-    // copies of the feature are visible, the popup appears
-    // over the copy being pointed to.
-    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-      coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-    }
+  //   // Ensure that if the map is zoomed out such that multiple
+  //   // copies of the feature are visible, the popup appears
+  //   // over the copy being pointed to.
+  //   while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+  //     coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+  //   }
 
-    popup
-      .setLngLat(coordinates)
-      .setHTML(
-        '<img src="images/logo.jpg" width="100px" height="100px">' +
-          "Hunters Creek Village" +
-          "<br>" +
-          '<img src="images/trail2_1.png" width="200px" height="150px">' +
-          "<br>" +
-          "Trails of Hunters Creek Village" +
-          "<br>" +
-          '<img src="images/trail.png">' +
-          "Trail Location" +
-          "<br>" +
-          "Connects Trail End St to Timberglen Dr"
-      )
-      .addTo(map);
+  //   popup
+  //     .setLngLat(coordinates)
+  //     .setHTML(
+  //       '<img src="images/logo.jpg" width="100px" height="100px">' +
+  //         "Hunters Creek Village" +
+  //         "<br>" +
+  //         '<img src="images/trail2_1.png" width="200px" height="150px">' +
+  //         "<br>" +
+  //         "Trails of Hunters Creek Village" +
+  //         "<br>" +
+  //         '<img src="images/trail.png">' +
+  //         "Trail Location" +
+  //         "<br>" +
+  //         "Connects Trail End St to Timberglen Dr"
+  //     )
+  //     .addTo(map);
 
-    //var popup = new mapboxgl.Popup({ offset: 0 })
-    //.setText("Camp 2");
+  //   //var popup = new mapboxgl.Popup({ offset: 0 })
+  //   //.setText("Camp 2");
 
-    //Add things to the side panel
-    // var div = document.getElementById('locImg');
-    // div.innerHTML = '';
-    // div.innerHTML = "<img src=\"images/trail2_1.png\" width=\"200px\" height=\"150px\">";
+  //   //Add things to the side panel
+  //   // var div = document.getElementById('locImg');
+  //   // div.innerHTML = '';
+  //   // div.innerHTML = "<img src=\"images/trail2_1.png\" width=\"200px\" height=\"150px\">";
 
-    // var div = document.getElementById('elevation');
-    // div.innerHTML = '';
-    // div.innerHTML = div.innerHTML = '<span style="color: #7fc97f">21,300 ft (6,500 m)</span>';
+  //   // var div = document.getElementById('elevation');
+  //   // div.innerHTML = '';
+  //   // div.innerHTML = div.innerHTML = '<span style="color: #7fc97f">21,300 ft (6,500 m)</span>';
 
-    // var div2 = document.getElementById('oxygen');
-    // div2.innerHTML = '';
-    // div2.innerHTML = '9.4%';
+  //   // var div2 = document.getElementById('oxygen');
+  //   // div2.innerHTML = '';
+  //   // div2.innerHTML = '9.4%';
 
-    // var div3 = document.getElementById('distToSummit');
-    // div3.innerHTML = '';
-    // div3.innerHTML = '7,735 ft (2,350 m)';
+  //   // var div3 = document.getElementById('distToSummit');
+  //   // div3.innerHTML = '';
+  //   // div3.innerHTML = '7,735 ft (2,350 m)';
 
-    // var div4 = document.getElementById('distToBaseCamp');
-    // div4.innerHTML = '';
-    // div4.innerHTML = '3,700 ft (1,120 m)';
+  //   // var div4 = document.getElementById('distToBaseCamp');
+  //   // div4.innerHTML = '';
+  //   // div4.innerHTML = '3,700 ft (1,120 m)';
 
-    // var div5 = document.getElementById('info');
-    // div5.innerHTML = '';
-    // div5.innerHTML = 'Located at the intersection of Greenbay Dr and Coachman St; trail connects two ends of Greenbay Dr';
+  //   // var div5 = document.getElementById('info');
+  //   // div5.innerHTML = '';
+  //   // div5.innerHTML = 'Located at the intersection of Greenbay Dr and Coachman St; trail connects two ends of Greenbay Dr';
 
-    // var div6 = document.getElementById('Location');
-    // div6.innerHTML = '';
-    // div6.innerHTML = 'Trails of Bunker Hill';
+  //   // var div6 = document.getElementById('Location');
+  //   // div6.innerHTML = '';
+  //   // div6.innerHTML = 'Trails of Bunker Hill';
 
-    // // create DOM element for the marker
-    // var el = document.createElement('div');
-    // el.id = 'marker';
+  //   // // create DOM element for the marker
+  //   // var el = document.createElement('div');
+  //   // el.id = 'marker';
 
-    // // create the marker
-    // new mapboxgl.Marker(el)
-    //   .setLngLat([86.90335492493271, 27.980322036569067])
-    //   //.setPopup(popup) // sets a popup on this marker
-    //   .addTo(map)
-    //.togglePopup();
-  });
+  //   // // create the marker
+  //   // new mapboxgl.Marker(el)
+  //   //   .setLngLat([86.90335492493271, 27.980322036569067])
+  //   //   //.setPopup(popup) // sets a popup on this marker
+  //   //   .addTo(map)
+  //   //.togglePopup();
+  // });
 
   // When a click event occurs on a feature in the places layer, open a popup at the
   // location of the feature, with description HTML from its properties.
@@ -600,220 +600,220 @@ function createMap() {
 
   // When a click event occurs on a feature in the places layer, open a popup at the
   // location of the feature, with description HTML from its properties.
-  map.on("mouseenter", "camp4", function (e) {
-    var coordinates = e.features[0].geometry.coordinates.slice();
-    var description = e.features[0].properties.description;
+  // map.on("mouseenter", "camp4", function (e) {
+  //   var coordinates = e.features[0].geometry.coordinates.slice();
+  //   var description = e.features[0].properties.description;
 
-    // Ensure that if the map is zoomed out such that multiple
-    // copies of the feature are visible, the popup appears
-    // over the copy being pointed to.
-    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-      coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-    }
+  //   // Ensure that if the map is zoomed out such that multiple
+  //   // copies of the feature are visible, the popup appears
+  //   // over the copy being pointed to.
+  //   while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+  //     coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+  //   }
 
-    popup
-      .setLngLat(coordinates)
-      .setHTML(
-        '<img src="images/logo.jpg" width="100px" height="100px">' +
-          "Hunters Creek Village" +
-          "<br>" +
-          "Trails of Hunters Creek Village" +
-          "<br>" +
-          '<img src="images/trail.png">' +
-          "Trail Location" +
-          "<br>" +
-          "Connects Timberglen Dr to Caruthers Ln"
-      )
-      .addTo(map);
+  //   popup
+  //     .setLngLat(coordinates)
+  //     .setHTML(
+  //       '<img src="images/logo.jpg" width="100px" height="100px">' +
+  //         "Hunters Creek Village" +
+  //         "<br>" +
+  //         "Trails of Hunters Creek Village" +
+  //         "<br>" +
+  //         '<img src="images/trail.png">' +
+  //         "Trail Location" +
+  //         "<br>" +
+  //         "Connects Timberglen Dr to Caruthers Ln"
+  //     )
+  //     .addTo(map);
 
-    //var popup = new mapboxgl.Popup({ offset: 0 })
-    //.setText("Camp 4");
+  //   //var popup = new mapboxgl.Popup({ offset: 0 })
+  //   //.setText("Camp 4");
 
-    //Add things to the side panel
-    // var div = document.getElementById('locImg');
-    // div.innerHTML = '';
-    // div.innerHTML = "<img src=\"images/trail3_1.png\" width=\"200px\" height=\"150px\">";
+  //   //Add things to the side panel
+  //   // var div = document.getElementById('locImg');
+  //   // div.innerHTML = '';
+  //   // div.innerHTML = "<img src=\"images/trail3_1.png\" width=\"200px\" height=\"150px\">";
 
-    // var div = document.getElementById('elevation');
-    // div.innerHTML = '';
-    // div.innerHTML = '<span style="color: #f16913">26,000 ft (7,925 m)</span>';
+  //   // var div = document.getElementById('elevation');
+  //   // div.innerHTML = '';
+  //   // div.innerHTML = '<span style="color: #f16913">26,000 ft (7,925 m)</span>';
 
-    // var div2 = document.getElementById('oxygen');
-    // div2.innerHTML = '';
-    // div2.innerHTML = div2.innerHTML = '<span style="color: rgb(201, 34, 34)">7.8%</span>';
+  //   // var div2 = document.getElementById('oxygen');
+  //   // div2.innerHTML = '';
+  //   // div2.innerHTML = div2.innerHTML = '<span style="color: rgb(201, 34, 34)">7.8%</span>';
 
-    // var div3 = document.getElementById('distToSummit');
-    // div3.innerHTML = '';
-    // div3.innerHTML = '3,035 ft (925 m)';
+  //   // var div3 = document.getElementById('distToSummit');
+  //   // div3.innerHTML = '';
+  //   // div3.innerHTML = '3,035 ft (925 m)';
 
-    // var div4 = document.getElementById('distToBaseCamp');
-    // div4.innerHTML = '';
-    // div4.innerHTML = '8,400 ft (2,545 m)';
+  //   // var div4 = document.getElementById('distToBaseCamp');
+  //   // div4.innerHTML = '';
+  //   // div4.innerHTML = '8,400 ft (2,545 m)';
 
-    // var div5 = document.getElementById('info');
-    // div5.innerHTML = '';
-    // div5.innerHTML = 'Connects Greenbay Dr to Quail Hollow Ln';
+  //   // var div5 = document.getElementById('info');
+  //   // div5.innerHTML = '';
+  //   // div5.innerHTML = 'Connects Greenbay Dr to Quail Hollow Ln';
 
-    // var div6 = document.getElementById('Location');
-    // div6.innerHTML = '';
-    // div6.innerHTML = 'Trails of Bunker Hill';
+  //   // var div6 = document.getElementById('Location');
+  //   // div6.innerHTML = '';
+  //   // div6.innerHTML = 'Trails of Bunker Hill';
 
-    // // create DOM element for the marker
-    // var el = document.createElement('div');
-    // el.id = 'marker';
+  //   // // create DOM element for the marker
+  //   // var el = document.createElement('div');
+  //   // el.id = 'marker';
 
-    // // create the marker
-    // new mapboxgl.Marker(el)
-    //   .setLngLat([86.93082159811098, 27.973526561469413])
-    //   //.setPopup(popup) // sets a popup on this marker
-    //   .addTo(map)
-    //.togglePopup();
-  });
-
-  // When a click event occurs on a feature in the places layer, open a popup at the
-  // location of the feature, with description HTML from its properties.
-  map.on("mouseenter", "camp5", function (e) {
-    var coordinates = e.features[0].geometry.coordinates.slice();
-    var description = e.features[0].properties.description;
-
-    // Ensure that if the map is zoomed out such that multiple
-    // copies of the feature are visible, the popup appears
-    // over the copy being pointed to.
-    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-      coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-    }
-
-    popup
-      .setLngLat(coordinates)
-      .setHTML(
-        '<img src="images/logo.jpg" width="100px" height="100px">' +
-          "Hunters Creek Village" +
-          "<br>" +
-          "Trails of Hunters Creek Village" +
-          "<br>" +
-          "Trail Location" +
-          "<br>" +
-          "Connects Caruthers Ln to Timberglen Dr"
-      )
-      .addTo(map);
-
-    //var popup = new mapboxgl.Popup({ offset: 0 })
-    //.setText("South Summit");
-
-    //Add things to the side panel
-    // var div = document.getElementById('locImg');
-    // div.innerHTML = '';
-    // div.innerHTML = "<img src=\"images/trail3_2.png\" width=\"200px\" height=\"150px\">";
-
-    // var div = document.getElementById('elevation');
-    // div.innerHTML = '';
-    // div.innerHTML = div.innerHTML = '<span style="color: rgb(201, 34, 34)">28,700 ft (8,748 m)</span>';
-
-    // var div2 = document.getElementById('oxygen');
-    // div2.innerHTML = '';
-    // div2.innerHTML = div2.innerHTML = '<span style="color: rgb(201, 34, 34)">7%</span>';
-
-    // var div3 = document.getElementById('distToSummit');
-    // div3.innerHTML = '';
-    // div3.innerHTML = '335 ft (102 m)';
-
-    // var div4 = document.getElementById('distToBaseCamp');
-    // div4.innerHTML = '';
-    // div4.innerHTML = '11,100 ft (3,368 m)';
-
-    // var div5 = document.getElementById('info');
-    // div5.innerHTML = '';
-    // div5.innerHTML = 'Connects Quail Hollow Ln to Greenbay Dr';
-
-    // var div6 = document.getElementById('Location');
-    // div6.innerHTML = '';
-    // div6.innerHTML = 'Trails of Bunker Hill';
-
-    // // create DOM element for the marker
-    // var el = document.createElement('div');
-    // el.id = 'marker';
-
-    // // create the marker
-    // new mapboxgl.Marker(el)
-    //   .setLngLat([86.92582516958662, 27.985105632009432])
-    //   //.setPopup(popup) // sets a popup on this marker
-    //   .addTo(map)
-    //.togglePopup();
-  });
+  //   // // create the marker
+  //   // new mapboxgl.Marker(el)
+  //   //   .setLngLat([86.93082159811098, 27.973526561469413])
+  //   //   //.setPopup(popup) // sets a popup on this marker
+  //   //   .addTo(map)
+  //   //.togglePopup();
+  // });
 
   // When a click event occurs on a feature in the places layer, open a popup at the
   // location of the feature, with description HTML from its properties.
-  map.on("mouseenter", "camp6", function (e) {
-    var coordinates = e.features[0].geometry.coordinates.slice();
-    var description = e.features[0].properties.description;
+  // map.on("mouseenter", "camp5", function (e) {
+  //   var coordinates = e.features[0].geometry.coordinates.slice();
+  //   var description = e.features[0].properties.description;
 
-    // Ensure that if the map is zoomed out such that multiple
-    // copies of the feature are visible, the popup appears
-    // over the copy being pointed to.
-    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-      coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-    }
+  //   // Ensure that if the map is zoomed out such that multiple
+  //   // copies of the feature are visible, the popup appears
+  //   // over the copy being pointed to.
+  //   while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+  //     coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+  //   }
 
-    popup
-      .setLngLat(coordinates)
-      .setHTML(
-        '<img src="images/logo.jpg" width="100px" height="100px">' +
-          "Hunters Creek Village" +
-          "<br>" +
-          '<img src="images/trail4_1.png" width="200px" height="150px">' +
-          "<br>" +
-          "Trails of Hunters Creek Village" +
-          "<br>" +
-          '<img src="images/trail.png">' +
-          "Trail Location" +
-          "<br>" +
-          "Connects Tarrington Dr to Oak Valley Dr"
-      )
-      .addTo(map);
+  //   popup
+  //     .setLngLat(coordinates)
+  //     .setHTML(
+  //       '<img src="images/logo.jpg" width="100px" height="100px">' +
+  //         "Hunters Creek Village" +
+  //         "<br>" +
+  //         "Trails of Hunters Creek Village" +
+  //         "<br>" +
+  //         "Trail Location" +
+  //         "<br>" +
+  //         "Connects Caruthers Ln to Timberglen Dr"
+  //     )
+  //     .addTo(map);
 
-    //var popup = new mapboxgl.Popup({ offset: 0 })
-    //.setText("South Summit");
+  //   //var popup = new mapboxgl.Popup({ offset: 0 })
+  //   //.setText("South Summit");
 
-    //Add things to the side panel
-    // var div = document.getElementById('locImg');
-    // div.innerHTML = '';
-    // div.innerHTML = "<img src=\"images/trail4_1.png\" width=\"200px\" height=\"150px\">";
+  //   //Add things to the side panel
+  //   // var div = document.getElementById('locImg');
+  //   // div.innerHTML = '';
+  //   // div.innerHTML = "<img src=\"images/trail3_2.png\" width=\"200px\" height=\"150px\">";
 
-    // var div = document.getElementById('elevation');
-    // div.innerHTML = '';
-    // div.innerHTML = div.innerHTML = '<span style="color: rgb(201, 34, 34)">28,700 ft (8,748 m)</span>';
+  //   // var div = document.getElementById('elevation');
+  //   // div.innerHTML = '';
+  //   // div.innerHTML = div.innerHTML = '<span style="color: rgb(201, 34, 34)">28,700 ft (8,748 m)</span>';
 
-    // var div2 = document.getElementById('oxygen');
-    // div2.innerHTML = '';
-    // div2.innerHTML = div2.innerHTML = '<span style="color: rgb(201, 34, 34)">7%</span>';
+  //   // var div2 = document.getElementById('oxygen');
+  //   // div2.innerHTML = '';
+  //   // div2.innerHTML = div2.innerHTML = '<span style="color: rgb(201, 34, 34)">7%</span>';
 
-    // var div3 = document.getElementById('distToSummit');
-    // div3.innerHTML = '';
-    // div3.innerHTML = '335 ft (102 m)';
+  //   // var div3 = document.getElementById('distToSummit');
+  //   // div3.innerHTML = '';
+  //   // div3.innerHTML = '335 ft (102 m)';
 
-    // var div4 = document.getElementById('distToBaseCamp');
-    // div4.innerHTML = '';
-    // div4.innerHTML = '11,100 ft (3,368 m)';
+  //   // var div4 = document.getElementById('distToBaseCamp');
+  //   // div4.innerHTML = '';
+  //   // div4.innerHTML = '11,100 ft (3,368 m)';
 
-    // var div5 = document.getElementById('info');
-    // div5.innerHTML = '';
-    // div5.innerHTML = 'Connects Blalock Rd to Dunsinane St';
+  //   // var div5 = document.getElementById('info');
+  //   // div5.innerHTML = '';
+  //   // div5.innerHTML = 'Connects Quail Hollow Ln to Greenbay Dr';
 
-    // var div6 = document.getElementById('Location');
-    // div6.innerHTML = '';
-    // div6.innerHTML = 'Trails of Bunker Hill';
+  //   // var div6 = document.getElementById('Location');
+  //   // div6.innerHTML = '';
+  //   // div6.innerHTML = 'Trails of Bunker Hill';
 
-    // // create DOM element for the marker
-    // var el = document.createElement('div');
-    // el.id = 'marker';
+  //   // // create DOM element for the marker
+  //   // var el = document.createElement('div');
+  //   // el.id = 'marker';
 
-    // // create the marker
-    // new mapboxgl.Marker(el)
-    //   .setLngLat([86.92582516958662, 27.985105632009432])
-    //   //.setPopup(popup) // sets a popup on this marker
-    //   .addTo(map)
-    //.togglePopup();
-  });
+  //   // // create the marker
+  //   // new mapboxgl.Marker(el)
+  //   //   .setLngLat([86.92582516958662, 27.985105632009432])
+  //   //   //.setPopup(popup) // sets a popup on this marker
+  //   //   .addTo(map)
+  //   //.togglePopup();
+  // });
+
+  // When a click event occurs on a feature in the places layer, open a popup at the
+  // location of the feature, with description HTML from its properties.
+  // map.on("mouseenter", "camp6", function (e) {
+  //   var coordinates = e.features[0].geometry.coordinates.slice();
+  //   var description = e.features[0].properties.description;
+
+  //   // Ensure that if the map is zoomed out such that multiple
+  //   // copies of the feature are visible, the popup appears
+  //   // over the copy being pointed to.
+  //   while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+  //     coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+  //   }
+
+  //   popup
+  //     .setLngLat(coordinates)
+  //     .setHTML(
+  //       '<img src="images/logo.jpg" width="100px" height="100px">' +
+  //         "Hunters Creek Village" +
+  //         "<br>" +
+  //         '<img src="images/trail4_1.png" width="200px" height="150px">' +
+  //         "<br>" +
+  //         "Trails of Hunters Creek Village" +
+  //         "<br>" +
+  //         '<img src="images/trail.png">' +
+  //         "Trail Location" +
+  //         "<br>" +
+  //         "Connects Tarrington Dr to Oak Valley Dr"
+  //     )
+  //     .addTo(map);
+
+  //   //var popup = new mapboxgl.Popup({ offset: 0 })
+  //   //.setText("South Summit");
+
+  //   //Add things to the side panel
+  //   // var div = document.getElementById('locImg');
+  //   // div.innerHTML = '';
+  //   // div.innerHTML = "<img src=\"images/trail4_1.png\" width=\"200px\" height=\"150px\">";
+
+  //   // var div = document.getElementById('elevation');
+  //   // div.innerHTML = '';
+  //   // div.innerHTML = div.innerHTML = '<span style="color: rgb(201, 34, 34)">28,700 ft (8,748 m)</span>';
+
+  //   // var div2 = document.getElementById('oxygen');
+  //   // div2.innerHTML = '';
+  //   // div2.innerHTML = div2.innerHTML = '<span style="color: rgb(201, 34, 34)">7%</span>';
+
+  //   // var div3 = document.getElementById('distToSummit');
+  //   // div3.innerHTML = '';
+  //   // div3.innerHTML = '335 ft (102 m)';
+
+  //   // var div4 = document.getElementById('distToBaseCamp');
+  //   // div4.innerHTML = '';
+  //   // div4.innerHTML = '11,100 ft (3,368 m)';
+
+  //   // var div5 = document.getElementById('info');
+  //   // div5.innerHTML = '';
+  //   // div5.innerHTML = 'Connects Blalock Rd to Dunsinane St';
+
+  //   // var div6 = document.getElementById('Location');
+  //   // div6.innerHTML = '';
+  //   // div6.innerHTML = 'Trails of Bunker Hill';
+
+  //   // // create DOM element for the marker
+  //   // var el = document.createElement('div');
+  //   // el.id = 'marker';
+
+  //   // // create the marker
+  //   // new mapboxgl.Marker(el)
+  //   //   .setLngLat([86.92582516958662, 27.985105632009432])
+  //   //   //.setPopup(popup) // sets a popup on this marker
+  //   //   .addTo(map)
+  //   //.togglePopup();
+  // });
 
   // When a click event occurs on a feature in the places layer, open a popup at the
   // location of the feature, with description HTML from its properties.
@@ -1071,29 +1071,29 @@ function createMap() {
   });
 
   //Change the cursor to a pointer and highlight the marker when the user mouses over it.
-  map.on("mouseenter", "camp2", function () {
-    map.getCanvas().style.cursor = "pointer";
-    map.loadImage("images/trail_selected.png", function (error, image) {
-      map.addImage("custom-marker102", image);
-      map.addLayer({
-        id: "baseCamp102",
-        source: "camp2",
-        type: "symbol",
-        layout: {
-          "icon-image": "custom-marker102",
-          "icon-rotate": ["get", "bearing"],
-          "icon-allow-overlap": true,
-          "icon-ignore-placement": true,
-        },
-      });
-    });
-  });
-  //Change the cursor back to the default and un-highlight the marker when the user mouses out.
-  map.on("mouseout", "camp2", function () {
-    map.getCanvas().style.cursor = "";
-    map.removeLayer("baseCamp102");
-    map.removeImage("custom-marker102");
-  });
+  // map.on("mouseenter", "camp2", function () {
+  //   map.getCanvas().style.cursor = "pointer";
+  //   map.loadImage("images/trail_selected.png", function (error, image) {
+  //     map.addImage("custom-marker102", image);
+  //     map.addLayer({
+  //       id: "baseCamp102",
+  //       source: "camp2",
+  //       type: "symbol",
+  //       layout: {
+  //         "icon-image": "custom-marker102",
+  //         "icon-rotate": ["get", "bearing"],
+  //         "icon-allow-overlap": true,
+  //         "icon-ignore-placement": true,
+  //       },
+  //     });
+  //   });
+  // });
+  // //Change the cursor back to the default and un-highlight the marker when the user mouses out.
+  // map.on("mouseout", "camp2", function () {
+  //   map.getCanvas().style.cursor = "";
+  //   map.removeLayer("baseCamp102");
+  //   map.removeImage("custom-marker102");
+  // });
 
   //Change the cursor to a pointer and highlight the marker when the user mouses over it.
   map.on("mouseenter", "camp3", function () {
@@ -1121,79 +1121,79 @@ function createMap() {
   });
 
   //Change the cursor to a pointer and highlight the marker when the user mouses over it.
-  map.on("mouseenter", "camp4", function () {
-    map.getCanvas().style.cursor = "pointer";
-    map.loadImage("images/trail_selected.png", function (error, image) {
-      map.addImage("custom-marker104", image);
-      map.addLayer({
-        id: "baseCamp104",
-        source: "camp4",
-        type: "symbol",
-        layout: {
-          "icon-image": "custom-marker104",
-          "icon-rotate": ["get", "bearing"],
-          "icon-allow-overlap": true,
-          "icon-ignore-placement": true,
-        },
-      });
-    });
-  });
-  //Change the cursor back to the default and un-highlight the marker when the user mouses out.
-  map.on("mouseout", "camp4", function () {
-    map.getCanvas().style.cursor = "";
-    map.removeLayer("baseCamp104");
-    map.removeImage("custom-marker104");
-  });
+  // map.on("mouseenter", "camp4", function () {
+  //   map.getCanvas().style.cursor = "pointer";
+  //   map.loadImage("images/trail_selected.png", function (error, image) {
+  //     map.addImage("custom-marker104", image);
+  //     map.addLayer({
+  //       id: "baseCamp104",
+  //       source: "camp4",
+  //       type: "symbol",
+  //       layout: {
+  //         "icon-image": "custom-marker104",
+  //         "icon-rotate": ["get", "bearing"],
+  //         "icon-allow-overlap": true,
+  //         "icon-ignore-placement": true,
+  //       },
+  //     });
+  //   });
+  // });
+  // //Change the cursor back to the default and un-highlight the marker when the user mouses out.
+  // map.on("mouseout", "camp4", function () {
+  //   map.getCanvas().style.cursor = "";
+  //   map.removeLayer("baseCamp104");
+  //   map.removeImage("custom-marker104");
+  // });
 
   //Change the cursor to a pointer and highlight the marker when the user mouses over it.
-  map.on("mouseenter", "camp5", function () {
-    map.getCanvas().style.cursor = "pointer";
-    map.loadImage("images/trail_selected.png", function (error, image) {
-      map.addImage("custom-marker105", image);
-      map.addLayer({
-        id: "baseCamp105",
-        source: "camp5",
-        type: "symbol",
-        layout: {
-          "icon-image": "custom-marker105",
-          "icon-rotate": ["get", "bearing"],
-          "icon-allow-overlap": true,
-          "icon-ignore-placement": true,
-        },
-      });
-    });
-  });
-  //Change the cursor back to the default and un-highlight the marker when the user mouses out.
-  map.on("mouseout", "camp5", function () {
-    map.getCanvas().style.cursor = "";
-    map.removeLayer("baseCamp105");
-    map.removeImage("custom-marker105");
-  });
+  // map.on("mouseenter", "camp5", function () {
+  //   map.getCanvas().style.cursor = "pointer";
+  //   map.loadImage("images/trail_selected.png", function (error, image) {
+  //     map.addImage("custom-marker105", image);
+  //     map.addLayer({
+  //       id: "baseCamp105",
+  //       source: "camp5",
+  //       type: "symbol",
+  //       layout: {
+  //         "icon-image": "custom-marker105",
+  //         "icon-rotate": ["get", "bearing"],
+  //         "icon-allow-overlap": true,
+  //         "icon-ignore-placement": true,
+  //       },
+  //     });
+  //   });
+  // });
+  // //Change the cursor back to the default and un-highlight the marker when the user mouses out.
+  // map.on("mouseout", "camp5", function () {
+  //   map.getCanvas().style.cursor = "";
+  //   map.removeLayer("baseCamp105");
+  //   map.removeImage("custom-marker105");
+  // });
 
   //Change the cursor to a pointer and highlight the marker when the user mouses over it.
-  map.on("mouseenter", "camp6", function () {
-    map.getCanvas().style.cursor = "pointer";
-    map.loadImage("images/trail_selected.png", function (error, image) {
-      map.addImage("custom-marker106", image);
-      map.addLayer({
-        id: "baseCamp106",
-        source: "camp6",
-        type: "symbol",
-        layout: {
-          "icon-image": "custom-marker106",
-          "icon-rotate": ["get", "bearing"],
-          "icon-allow-overlap": true,
-          "icon-ignore-placement": true,
-        },
-      });
-    });
-  });
-  //Change the cursor back to the default and un-highlight the marker when the user mouses out.
-  map.on("mouseout", "camp6", function () {
-    map.getCanvas().style.cursor = "";
-    map.removeLayer("baseCamp106");
-    map.removeImage("custom-marker106");
-  });
+  // map.on("mouseenter", "camp6", function () {
+  //   map.getCanvas().style.cursor = "pointer";
+  //   map.loadImage("images/trail_selected.png", function (error, image) {
+  //     map.addImage("custom-marker106", image);
+  //     map.addLayer({
+  //       id: "baseCamp106",
+  //       source: "camp6",
+  //       type: "symbol",
+  //       layout: {
+  //         "icon-image": "custom-marker106",
+  //         "icon-rotate": ["get", "bearing"],
+  //         "icon-allow-overlap": true,
+  //         "icon-ignore-placement": true,
+  //       },
+  //     });
+  //   });
+  // });
+  // //Change the cursor back to the default and un-highlight the marker when the user mouses out.
+  // map.on("mouseout", "camp6", function () {
+  //   map.getCanvas().style.cursor = "";
+  //   map.removeLayer("baseCamp106");
+  //   map.removeImage("custom-marker106");
+  // });
 
   //Change the cursor to a pointer and highlight the marker when the user mouses over it.
   map.on("mouseenter", "camp7", function () {
