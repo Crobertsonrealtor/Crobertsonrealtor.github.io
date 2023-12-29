@@ -691,7 +691,6 @@ function createMap() {
           "<br>" +
           "Trails of Hunters Creek Village" +
           "<br>" +
-          '<img src="images/trail.png">' +
           "Trail Location" +
           "<br>" +
           "Connects Caruthers Ln to Timberglen Dr"
